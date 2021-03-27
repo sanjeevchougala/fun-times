@@ -8,7 +8,7 @@ export class HeaderComponent extends Component {
         return (
             <header>
                 <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-                    <div><a href="/welcome" className="navbar-brand">Chougalas</a></div>
+                    <div><a href="/" className="navbar-brand">FunOFunTimes</a></div>
                     <ul className="navbar-nav">
                         <li><Link className="nav-link" to="/counter">CounterGame</Link></li>
                         <li><Link className="nav-link" to="/tictactoe">Tic-Tac-Toe</Link></li>
