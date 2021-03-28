@@ -19,7 +19,7 @@ export default class ScrabbleComponent extends Component {
     render() {
         return (
             <div>   
-                <h1> Thw Word is: {this.state.random_word.word}</h1>
+                <h1> The Word is: {this.state.random_word.word}</h1>
                <button className="btn btn-info" name= "randomWord" onClick={this.getAWord}style={{"fontSize": "10px", "padding": "10px 10px", width: "100px"}}>Get A Random Word!</button>
             
                <table className='table table-striped table-bordered table-sm'>
