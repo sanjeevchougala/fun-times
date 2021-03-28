@@ -12,12 +12,11 @@ export class HeaderComponent extends Component {
                     <ul className="navbar-nav">
                         <li><Link className="nav-link" to="/counter">CounterGame</Link></li>
                         <li><Link className="nav-link" to="/tictactoe">Tic-Tac-Toe</Link></li>
-
+                        <li><Link className="nav-link" to="/scrabble">Scrabble</Link></li>
                     </ul>
-                   { /* <ul className="navbar-nav navbar-collapse justify-content-end">
-                        {!isUserLoggedIn && <li><Link className="nav-link" to="/login">Login</Link></li>}
-                        {isUserLoggedIn && <li><Link className="nav-link" to="/logout" onClick={AuthenticationService.logout}>Logout</Link></li>}
-                    </ul> */}
+                    <ul className="navbar-nav navbar-collapse justify-content-end">
+                        <li><Link className="nav-link" to="/dictionary">Dictionary</Link></li>
+                    </ul> 
                 </nav>
             </header>
         );

@@ -169,7 +169,6 @@ export default class TicTacToe extends Component {
                     }
                     cell.disableCell = true
                 }
-                console.log("cell_id " + cell_id + " : " +cell.value)
                 return cell
             }),
             availpos : this.state.availpos.filter((item) => item != cell_id),
