@@ -1,0 +1,61 @@
+.player1Home{
+    background-color:lightgreen;
+    opacity: 50%;
+}
+
+.player2Home{
+    background-color:thistle;
+    opacity: 50%;
+}
+
+.player3Home{
+    background-color:wheat;
+    opacity: 50%;
+}
+
+.player4Home{
+    background-color:tomato;
+    opacity: 50%;
+}
+
+.player1Btn{
+    background-color:teal;
+}
+
+.player3Btn{
+    background-color:yellowgreen;
+}
+
+.player3Btn{
+    background-color:royalblue;
+}
+
+.player4Btn{
+    background-color:gold;
+}
+.outerCell{
+    background-color:linen;
+    opacity: 50%;
+}
+
+.innerCell{
+    background-color:darkseagreen;
+    opacity: 70%;
+}
+
+.palaceHouse{
+    background-color:green;
+
+}
+.player2Side, .player4Side{
+    background-color:teal;
+    transition: rotate 1s;
+    rotate: 1 -0.5 1 180deg;
+}
+.cornerCell{
+    background-color:peru;
+
+}
+.palyerSide{
+    background-color:skyblue;
+}

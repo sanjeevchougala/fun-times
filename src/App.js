@@ -8,6 +8,7 @@ import TicTacToe from './components/tictactoe/TicTacToe'
 import Counter from './components/counter/Counter'
 import ScrabbleComponent from './components/scrabble/ScrabbleComponent'
 import DictionaryComponent from './components/scrabble/DictionaryComponent'
+import ChowkabarComponent from './components/chowkabara/ChowkabarComponent'
 
 class App extends Component {
     render(){ 
@@ -20,6 +21,7 @@ class App extends Component {
                 <Route path="/counter" component={Counter}/>
                 <Route path="/dictionary" component={DictionaryComponent}/>
                 <Route path="/scrabble" component={ScrabbleComponent}/>
+                <Route path="/chowkabara" component={ChowkabarComponent}/>
                 <FooterComponent/>
               </Router>  
           </div> 
