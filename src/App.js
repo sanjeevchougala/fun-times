@@ -22,7 +22,7 @@ class App extends Component {
                 <Route path="/dictionary" component={DictionaryComponent}/>
                 <Route path="/scrabble" component={ScrabbleComponent}/>
                 <Route path="/chowkabara" component={ChowkabarComponent}/>
-                <FooterComponent/>
+                {/*<FooterComponent/>*/}
               </Router>  
           </div> 
       )

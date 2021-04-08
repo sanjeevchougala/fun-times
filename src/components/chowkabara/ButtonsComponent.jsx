@@ -1,12 +1,8 @@
 import React, { Component } from 'react'
 
 export default class ButtonsComponent extends Component {
-    constructor(props){
-        super(props)
-    }
-
+    
     render() {
-        console.log("ButtonsCompoennt : " + `${this.props.currentCell.buttons.length}`)  
         return (
             
             Array.from({length:this.props.currentCell.buttons.length}).map(

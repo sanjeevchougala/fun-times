@@ -1,54 +1,84 @@
 .player1Home{
     background-color:lightgreen;
     opacity: 50%;
+    min-width: 80px; 
+    min-height : 80px;
 }
 
 .player2Home{
     background-color:thistle;
     opacity: 50%;
+    min-width: 80px; 
+    min-height : 80px;
 }
 
 .player3Home{
     background-color:wheat;
     opacity: 50%;
+    min-width: 80px; 
+    min-height : 80px;
 }
 
 .player4Home{
     background-color:tomato;
     opacity: 50%;
+    min-width: 80px; 
+    min-height : 80px;
 }
 
 .player1Btn{
     background-color:teal;
+    font-size:6px;
+    font-variant: small-caps;
+    font-weight: bold;
+    color: red;
 }
 
-.player3Btn{
+.player2Btn{
     background-color:yellowgreen;
+    font-size:6px;
+    font-variant: small-caps;
+    font-weight: bold;
+    color: red;
 }
 
 .player3Btn{
     background-color:royalblue;
+    font-size:6px;
+    font-variant: small-caps;
+    font-weight: bold;
+    color: red;
 }
 
 .player4Btn{
     background-color:gold;
+    font-size:6px;
+    font-variant: small-caps;
+    font-weight: bold;
+    color: red;
 }
 .outerCell{
     background-color:linen;
     opacity: 50%;
+    min-width: 60px; 
+    min-height : 60px;
 }
 
 .innerCell{
-    background-color:darkseagreen;
+    background-color:brown;
     opacity: 70%;
+    min-width: 60px; 
+    min-height : 60px;
 }
 
 .palaceHouse{
     background-color:green;
+    min-width: 100px; 
+    min-height : 100px;
 
 }
 .player2Side, .player4Side{
-    background-color:teal;
+    background-color:;
     transition: rotate 1s;
     rotate: 1 -0.5 1 180deg;
 }
@@ -57,5 +87,6 @@
 
 }
 .palyerSide{
-    background-color:skyblue;
+    background-color:lightgray;
+    opacity: 90%;
 }
