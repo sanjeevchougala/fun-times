@@ -1,61 +1,117 @@
 .player1Home{
     background-color:lightgreen;
     opacity: 50%;
-    min-width: 80px; 
-    min-height : 80px;
+    min-width: 100px; 
+    min-height : 100px;
 }
 
 .player2Home{
     background-color:thistle;
     opacity: 50%;
-    min-width: 80px; 
-    min-height : 80px;
+    min-width: 100px; 
+    min-height : 100px;
 }
 
 .player3Home{
     background-color:wheat;
     opacity: 50%;
-    min-width: 80px; 
-    min-height : 80px;
+    min-width : 100px; 
+    min-height : 100px;
 }
 
 .player4Home{
     background-color:tomato;
     opacity: 50%;
-    min-width: 80px; 
-    min-height : 80px;
+    min-width: 100px; 
+    min-height : 100px;
+}
+
+.playerBtn1{
+    background-color:teal;
+    font-variant: small-caps;
+    color : black;
+    display :ruby;
+    height : 50px;
+    width : 50px;
+    border-radius : 50%;
+    border :  solid red;
+}
+
+.playerBtn2{
+    background-color:yellowgreen;
+    font-variant: small-caps;
+    color : black;
+    display :ruby;
+    height : 50px;
+    width : 50px;
+    border-radius : 50%;
+    border :  solid red;
+}
+
+.playerBtn3{
+    background-color:royalblue;
+    font-variant: small-caps;
+    color : black;
+    display :ruby;
+    height : 50px;
+    width : 50px;
+    border-radius : 50%;
+    border :  solid red;
+}
+
+.playerBtn4{
+    background-color:gold;
+    font-variant: small-caps;
+    color : black;
+    display :ruby;
+    height : 50px;
+    width : 50px;
+    border-radius : 50%;
+    border :  solid red;
 }
 
 .player1Btn{
     background-color:teal;
-    font-size:6px;
     font-variant: small-caps;
-    font-weight: bold;
-    color: red;
+    color : black;
+    display :ruby;
+    height : 50px;
+    width : 50px;
+    border-radius : 50%;
+    border :  solid red;
 }
 
 .player2Btn{
     background-color:yellowgreen;
-    font-size:6px;
     font-variant: small-caps;
-    font-weight: bold;
-    color: red;
+    color: black;
+    display :ruby;
+    height : 50px;
+    width : 50px;
+    border-radius : 50%;
+    border :  solid red;
 }
 
 .player3Btn{
     background-color:royalblue;
-    font-size:6px;
     font-variant: small-caps;
-    font-weight: bold;
-    color: red;
+    color: black;
+    display :ruby;
+    height : 50px;
+    width : 50px;
+    border-radius : 50%;
+    border :  solid red;
 }
 
 .player4Btn{
     background-color:gold;
-    font-size:6px;
     font-variant: small-caps;
-    font-weight: bold;
-    color: red;
+    color: black;
+    display :ruby;
+    height : 50px;
+    width : 50px;
+    border-radius : 50%;
+    border :  solid red;
 }
 .outerCell{
     background-color:linen;
@@ -73,8 +129,8 @@
 
 .palaceHouse{
     background-color:green;
-    min-width: 100px; 
-    min-height : 100px;
+    min-width: 200px; 
+    min-height : 200px;
 
 }
 .player2Side, .player4Side{

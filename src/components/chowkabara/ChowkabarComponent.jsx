@@ -33,7 +33,7 @@ export default class ChowkabarComponent extends Component {
                   completedPlay: false,
                   dice : '',
                   allow_to_Roll_Dice : false,
-                  letTurnforNextPlayer : false 
+                  letTurnforNextPlayer : false   
                 },
             player_3 : { name:'', 
                   id : 3,
@@ -44,7 +44,7 @@ export default class ChowkabarComponent extends Component {
                   completedPlay: false, 
                   dice : '',
                   allow_to_Roll_Dice : false ,
-                  letTurnforNextPlayer : false 
+                  letTurnforNextPlayer : false  
                 },
             player_4 : { name:'', 
                   iconColor :'',
@@ -55,27 +55,27 @@ export default class ChowkabarComponent extends Component {
                   completedPlay: false, 
                   dice : '',
                   allow_to_Roll_Dice : false,
-                  letTurnforNextPlayer : false  
+                  letTurnforNextPlayer : false   
                 },
 
             innerCells : [22,23,24,32,34,42,43,44],
             
-            b11 : {btnId : 'b11', btnClass: 'player1Btn', playerHome : 'cell13', active : true, inCell : 'cell13', buttonPath : [13,12,11,21,31,41,51,52,53,54,55,45,35,25,15,14,24,34,44,43,42,32,22,23,33]},
-            b12 : {btnId : 'b12', btnClass: 'player1Btn', playerHome : 'cell13', disable : true, inCell : 'cell13', buttonPath : [13,12,11,21,31,41,51,52,53,54,55,45,35,25,15,14,24,34,44,43,42,32,22,23,33]},
-            b13 : {btnId : 'b13', btnClass: 'player1Btn', playerHome : 'cell13', disable : true, inCell : 'cell13', buttonPath : [13,12,11,21,31,41,51,52,53,54,55,45,35,25,15,14,24,34,44,43,42,32,22,23,33]},
-            b14 : {btnId : 'b14', btnClass: 'player1Btn', playerHome : 'cell13', disable : true, inCell : 'cell13', buttonPath : [13,12,11,21,31,41,51,52,53,54,55,45,35,25,15,14,24,34,44,43,42,32,22,23,33]},
-            b21 : {btnId : 'b21', btnClass: 'player2Btn', playerHome : 'cell31', disable : true, inCell : 'cell31', buttonPath : [31,41,51,52,53,54,55,45,35,25,15,14,13,12,11,21,22,23,24,34,44,43,42,32,33]},
-            b22 : {btnId : 'b22', btnClass: 'player2Btn', playerHome : 'cell31', disable : true, inCell : 'cell31', buttonPath : [31,41,51,52,53,54,55,45,35,25,15,14,13,12,11,21,22,23,24,34,44,43,42,32,33]},
-            b23 : {btnId : 'b23', btnClass: 'player2Btn', playerHome : 'cell31', disable : true, inCell : 'cell31', buttonPath : [31,41,51,52,53,54,55,45,35,25,15,14,13,12,11,21,22,23,24,34,44,43,42,32,33]},
-            b24 : {btnId : 'b24', btnClass: 'player2Btn', playerHome : 'cell31', disable : true, inCell : 'cell31', buttonPath : [31,41,51,52,53,54,55,45,35,25,15,14,13,12,11,21,22,23,24,34,44,43,42,32,33]},
-            b31 : {btnId : 'b31', btnClass: 'player3Btn', playerHome : 'cell53', disable : true, inCell : 'cell53', buttonPath : [53,54,55,45,35,25,15,14,13,12,11,21,31,41,51,52,42,32,22,23,24,34,44,43,33]},
-            b32 : {btnId : 'b32', btnClass: 'player3Btn', playerHome : 'cell53', disable : true, inCell : 'cell53', buttonPath : [53,54,55,45,35,25,15,14,13,12,11,21,31,41,51,52,42,32,22,23,24,34,44,43,33]},
-            b33 : {btnId : 'b33', btnClass: 'player3Btn', playerHome : 'cell53', disable : true, inCell : 'cell53', buttonPath : [53,54,55,45,35,25,15,14,13,12,11,21,31,41,51,52,42,32,22,23,24,34,44,43,33]},
-            b34 : {btnId : 'b34', btnClass: 'player3Btn', playerHome : 'cell53', disable : true, inCell : 'cell53', buttonPath : [53,54,55,45,35,25,15,14,13,12,11,21,31,41,51,52,42,32,22,23,24,34,44,43,33]},
-            b41 : {btnId : 'b41', btnClass: 'player4Btn', playerHome : 'cell35', disable : true, inCell : 'cell35', buttonPath : [35,25,15,14,13,12,11,21,31,41,51,52,53,54,55,45,44,43,42,32,22,23,24,34,33]},
-            b42 : {btnId : 'b42', btnClass: 'player4Btn', playerHome : 'cell35', disable : true, inCell : 'cell35', buttonPath : [35,25,15,14,13,12,11,21,31,41,51,52,53,54,55,45,44,43,42,32,22,23,24,34,33]},
-            b43 : {btnId : 'b43', btnClass: 'player4Btn', playerHome : 'cell35', disable : true, inCell : 'cell35', buttonPath : [35,25,15,14,13,12,11,21,31,41,51,52,53,54,55,45,44,43,42,32,22,23,24,34,33]},
-            b44 : {btnId : 'b44', btnClass: 'player4Btn', playerHome : 'cell35', disable : true, inCell : 'cell35', buttonPath : [35,25,15,14,13,12,11,21,31,41,51,52,53,54,55,45,44,43,42,32,22,23,24,34,33]},
+            p11 : {btnId : 'p11', btnClass: 'player1Btn', playerHome : 'cell13', active : true, inCell : 'cell13', buttonPath : [13,12,11,21,31,41,51,52,53,54,55,45,35,25,15,14,24,34,44,43,42,32,22,23,33]},
+            p12 : {btnId : 'p12', btnClass: 'player1Btn', playerHome : 'cell13', disable : true, inCell : 'cell13', buttonPath : [13,12,11,21,31,41,51,52,53,54,55,45,35,25,15,14,24,34,44,43,42,32,22,23,33]},
+            p13 : {btnId : 'p13', btnClass: 'player1Btn', playerHome : 'cell13', disable : true, inCell : 'cell13', buttonPath : [13,12,11,21,31,41,51,52,53,54,55,45,35,25,15,14,24,34,44,43,42,32,22,23,33]},
+            p14 : {btnId : 'p14', btnClass: 'player1Btn', playerHome : 'cell13', disable : true, inCell : 'cell13', buttonPath : [13,12,11,21,31,41,51,52,53,54,55,45,35,25,15,14,24,34,44,43,42,32,22,23,33]},
+            p21 : {btnId : 'p21', btnClass: 'player2Btn', playerHome : 'cell31', disable : true, inCell : 'cell31', buttonPath : [31,41,51,52,53,54,55,45,35,25,15,14,13,12,11,21,22,23,24,34,44,43,42,32,33]},
+            p22 : {btnId : 'p22', btnClass: 'player2Btn', playerHome : 'cell31', disable : true, inCell : 'cell31', buttonPath : [31,41,51,52,53,54,55,45,35,25,15,14,13,12,11,21,22,23,24,34,44,43,42,32,33]},
+            p23 : {btnId : 'p23', btnClass: 'player2Btn', playerHome : 'cell31', disable : true, inCell : 'cell31', buttonPath : [31,41,51,52,53,54,55,45,35,25,15,14,13,12,11,21,22,23,24,34,44,43,42,32,33]},
+            p24 : {btnId : 'p24', btnClass: 'player2Btn', playerHome : 'cell31', disable : true, inCell : 'cell31', buttonPath : [31,41,51,52,53,54,55,45,35,25,15,14,13,12,11,21,22,23,24,34,44,43,42,32,33]},
+            p31 : {btnId : 'p31', btnClass: 'player3Btn', playerHome : 'cell53', disable : true, inCell : 'cell53', buttonPath : [53,54,55,45,35,25,15,14,13,12,11,21,31,41,51,52,42,32,22,23,24,34,44,43,33]},
+            p32 : {btnId : 'p32', btnClass: 'player3Btn', playerHome : 'cell53', disable : true, inCell : 'cell53', buttonPath : [53,54,55,45,35,25,15,14,13,12,11,21,31,41,51,52,42,32,22,23,24,34,44,43,33]},
+            p33 : {btnId : 'p33', btnClass: 'player3Btn', playerHome : 'cell53', disable : true, inCell : 'cell53', buttonPath : [53,54,55,45,35,25,15,14,13,12,11,21,31,41,51,52,42,32,22,23,24,34,44,43,33]},
+            p34 : {btnId : 'p34', btnClass: 'player3Btn', playerHome : 'cell53', disable : true, inCell : 'cell53', buttonPath : [53,54,55,45,35,25,15,14,13,12,11,21,31,41,51,52,42,32,22,23,24,34,44,43,33]},
+            p41 : {btnId : 'p41', btnClass: 'player4Btn', playerHome : 'cell35', disable : true, inCell : 'cell35', buttonPath : [35,25,15,14,13,12,11,21,31,41,51,52,53,54,55,45,44,43,42,32,22,23,24,34,33]},
+            p42 : {btnId : 'p42', btnClass: 'player4Btn', playerHome : 'cell35', disable : true, inCell : 'cell35', buttonPath : [35,25,15,14,13,12,11,21,31,41,51,52,53,54,55,45,44,43,42,32,22,23,24,34,33]},
+            p43 : {btnId : 'p43', btnClass: 'player4Btn', playerHome : 'cell35', disable : true, inCell : 'cell35', buttonPath : [35,25,15,14,13,12,11,21,31,41,51,52,53,54,55,45,44,43,42,32,22,23,24,34,33]},
+            p44 : {btnId : 'p44', btnClass: 'player4Btn', playerHome : 'cell35', disable : true, inCell : 'cell35', buttonPath : [35,25,15,14,13,12,11,21,31,41,51,52,53,54,55,45,44,43,42,32,22,23,24,34,33]},
            
         }
         
@@ -94,26 +94,26 @@ export default class ChowkabarComponent extends Component {
             player_2 : { ...this.state.player_2, allow_to_Roll_Dice : false, dice : '', hasPasstoEnterInner : false, letTurnforNextPlayer : false},
             player_3 : { ...this.state.player_3, allow_to_Roll_Dice : false, dice : '', hasPasstoEnterInner : false, letTurnforNextPlayer : false},
             player_4 : { ...this.state.player_4, allow_to_Roll_Dice : false, dice : '', hasPasstoEnterInner : false, letTurnforNextPlayer : false},
-            b11 : {btnId : 'b11', btnClass: 'player1Btn', playerHome : 'cell13', disable : true, inCell : 'cell13', buttonPath : [13,12,11,21,31,41,51,52,53,54,55,45,35,25,15,14,24,34,44,43,42,32,22,23,33]},
-            b12 : {btnId : 'b12', btnClass: 'player1Btn', playerHome : 'cell13', disable : true, inCell : 'cell13', buttonPath : [13,12,11,21,31,41,51,52,53,54,55,45,35,25,15,14,24,34,44,43,42,32,22,23,33]},
-            b13 : {btnId : 'b13', btnClass: 'player1Btn', playerHome : 'cell13', disable : true, inCell : 'cell13', buttonPath : [13,12,11,21,31,41,51,52,53,54,55,45,35,25,15,14,24,34,44,43,42,32,22,23,33]},
-            b14 : {btnId : 'b14', btnClass: 'player1Btn', playerHome : 'cell13', disable : true, inCell : 'cell13', buttonPath : [13,12,11,21,31,41,51,52,53,54,55,45,35,25,15,14,24,34,44,43,42,32,22,23,33]},
-            b21 : {btnId : 'b21', btnClass: 'player2Btn', playerHome : 'cell31', disable : true, inCell : 'cell31', buttonPath : [31,41,51,52,53,54,55,45,35,25,15,14,13,12,11,21,22,23,24,34,44,43,42,32,33]},
-            b22 : {btnId : 'b22', btnClass: 'player2Btn', playerHome : 'cell31', disable : true, inCell : 'cell31', buttonPath : [31,41,51,52,53,54,55,45,35,25,15,14,13,12,11,21,22,23,24,34,44,43,42,32,33]},
-            b23 : {btnId : 'b23', btnClass: 'player2Btn', playerHome : 'cell31', disable : true, inCell : 'cell31', buttonPath : [31,41,51,52,53,54,55,45,35,25,15,14,13,12,11,21,22,23,24,34,44,43,42,32,33]},
-            b24 : {btnId : 'b24', btnClass: 'player2Btn', playerHome : 'cell31', disable : true, inCell : 'cell31', buttonPath : [31,41,51,52,53,54,55,45,35,25,15,14,13,12,11,21,22,23,24,34,44,43,42,32,33]},
-            b31 : {btnId : 'b31', btnClass: 'player3Btn', playerHome : 'cell53', disable : true, inCell : 'cell53', buttonPath : [53,54,55,45,35,25,15,14,13,12,11,21,31,41,51,52,42,32,22,23,24,34,44,43,33]},
-            b32 : {btnId : 'b32', btnClass: 'player3Btn', playerHome : 'cell53', disable : true, inCell : 'cell53', buttonPath : [53,54,55,45,35,25,15,14,13,12,11,21,31,41,51,52,42,32,22,23,24,34,44,43,33]},
-            b33 : {btnId : 'b33', btnClass: 'player3Btn', playerHome : 'cell53', disable : true, inCell : 'cell53', buttonPath : [53,54,55,45,35,25,15,14,13,12,11,21,31,41,51,52,42,32,22,23,24,34,44,43,33]},
-            b34 : {btnId : 'b34', btnClass: 'player3Btn', playerHome : 'cell53', disable : true, inCell : 'cell53', buttonPath : [53,54,55,45,35,25,15,14,13,12,11,21,31,41,51,52,42,32,22,23,24,34,44,43,33]},
-            b41 : {btnId : 'b41', btnClass: 'player4Btn', playerHome : 'cell35', disable : true, inCell : 'cell35', buttonPath : [35,25,15,14,13,12,11,21,31,41,51,52,53,54,55,45,44,43,42,32,22,23,24,34,33]},
-            b42 : {btnId : 'b42', btnClass: 'player4Btn', playerHome : 'cell35', disable : true, inCell : 'cell35', buttonPath : [35,25,15,14,13,12,11,21,31,41,51,52,53,54,55,45,44,43,42,32,22,23,24,34,33]},
-            b43 : {btnId : 'b43', btnClass: 'player4Btn', playerHome : 'cell35', disable : true, inCell : 'cell35', buttonPath : [35,25,15,14,13,12,11,21,31,41,51,52,53,54,55,45,44,43,42,32,22,23,24,34,33]},
-            b44 : {btnId : 'b44', btnClass: 'player4Btn', playerHome : 'cell35', disable : true, inCell : 'cell35', buttonPath : [35,25,15,14,13,12,11,21,31,41,51,52,53,54,55,45,44,43,42,32,22,23,24,34,33]},
+            p11 : {btnId : 'p11', btnClass: 'player1Btn', playerHome : 'cell13', disable : true, inCell : 'cell13', buttonPath : [13,12,11,21,31,41,51,52,53,54,55,45,35,25,15,14,24,34,44,43,42,32,22,23,33]},
+            p12 : {btnId : 'p12', btnClass: 'player1Btn', playerHome : 'cell13', disable : true, inCell : 'cell13', buttonPath : [13,12,11,21,31,41,51,52,53,54,55,45,35,25,15,14,24,34,44,43,42,32,22,23,33]},
+            p13 : {btnId : 'p13', btnClass: 'player1Btn', playerHome : 'cell13', disable : true, inCell : 'cell13', buttonPath : [13,12,11,21,31,41,51,52,53,54,55,45,35,25,15,14,24,34,44,43,42,32,22,23,33]},
+            p14 : {btnId : 'p14', btnClass: 'player1Btn', playerHome : 'cell13', disable : true, inCell : 'cell13', buttonPath : [13,12,11,21,31,41,51,52,53,54,55,45,35,25,15,14,24,34,44,43,42,32,22,23,33]},
+            p21 : {btnId : 'p21', btnClass: 'player2Btn', playerHome : 'cell31', disable : true, inCell : 'cell31', buttonPath : [31,41,51,52,53,54,55,45,35,25,15,14,13,12,11,21,22,23,24,34,44,43,42,32,33]},
+            p22 : {btnId : 'p22', btnClass: 'player2Btn', playerHome : 'cell31', disable : true, inCell : 'cell31', buttonPath : [31,41,51,52,53,54,55,45,35,25,15,14,13,12,11,21,22,23,24,34,44,43,42,32,33]},
+            p23 : {btnId : 'p23', btnClass: 'player2Btn', playerHome : 'cell31', disable : true, inCell : 'cell31', buttonPath : [31,41,51,52,53,54,55,45,35,25,15,14,13,12,11,21,22,23,24,34,44,43,42,32,33]},
+            p24 : {btnId : 'p24', btnClass: 'player2Btn', playerHome : 'cell31', disable : true, inCell : 'cell31', buttonPath : [31,41,51,52,53,54,55,45,35,25,15,14,13,12,11,21,22,23,24,34,44,43,42,32,33]},
+            p31 : {btnId : 'p31', btnClass: 'player3Btn', playerHome : 'cell53', disable : true, inCell : 'cell53', buttonPath : [53,54,55,45,35,25,15,14,13,12,11,21,31,41,51,52,42,32,22,23,24,34,44,43,33]},
+            p32 : {btnId : 'p32', btnClass: 'player3Btn', playerHome : 'cell53', disable : true, inCell : 'cell53', buttonPath : [53,54,55,45,35,25,15,14,13,12,11,21,31,41,51,52,42,32,22,23,24,34,44,43,33]},
+            p33 : {btnId : 'p33', btnClass: 'player3Btn', playerHome : 'cell53', disable : true, inCell : 'cell53', buttonPath : [53,54,55,45,35,25,15,14,13,12,11,21,31,41,51,52,42,32,22,23,24,34,44,43,33]},
+            p34 : {btnId : 'p34', btnClass: 'player3Btn', playerHome : 'cell53', disable : true, inCell : 'cell53', buttonPath : [53,54,55,45,35,25,15,14,13,12,11,21,31,41,51,52,42,32,22,23,24,34,44,43,33]},
+            p41 : {btnId : 'p41', btnClass: 'player4Btn', playerHome : 'cell35', disable : true, inCell : 'cell35', buttonPath : [35,25,15,14,13,12,11,21,31,41,51,52,53,54,55,45,44,43,42,32,22,23,24,34,33]},
+            p42 : {btnId : 'p42', btnClass: 'player4Btn', playerHome : 'cell35', disable : true, inCell : 'cell35', buttonPath : [35,25,15,14,13,12,11,21,31,41,51,52,53,54,55,45,44,43,42,32,22,23,24,34,33]},
+            p43 : {btnId : 'p43', btnClass: 'player4Btn', playerHome : 'cell35', disable : true, inCell : 'cell35', buttonPath : [35,25,15,14,13,12,11,21,31,41,51,52,53,54,55,45,44,43,42,32,22,23,24,34,33]},
+            p44 : {btnId : 'p44', btnClass: 'player4Btn', playerHome : 'cell35', disable : true, inCell : 'cell35', buttonPath : [35,25,15,14,13,12,11,21,31,41,51,52,53,54,55,45,44,43,42,32,22,23,24,34,33]},
            
             cell11 : {id : 11, buttons : []},
             cell12 : {id : 12, buttons : []},
-            cell13 : {id : 13, buttons : [this.state.b11, this.state.b12, this.state.b13, this.state.b14]},
+            cell13 : {id : 13, buttons : [this.state.p11, this.state.p12, this.state.p13, this.state.p14]},
             cell14 : {id : 14, buttons : []},
             cell15 : {id : 15, buttons : []},
             cell21 : {id : 21, buttons : []},
@@ -139,13 +139,13 @@ export default class ChowkabarComponent extends Component {
             
         })
         if(!this.state.player_2.completedPlay) {
-            this.setState({cell31 : {id : 31, buttons : [this.state.b21, this.state.b22, this.state.b23, this.state.b24]}})
+            this.setState({cell31 : {id : 31, buttons : [this.state.p21, this.state.p22, this.state.p23, this.state.p24]}})
         }
         if(!this.state.player_4.completedPlay) {
-            this.setState({cell35 : {id : 35, buttons :[this.state.b41, this.state.b42, this.state.b43, this.state.b44]}})
+            this.setState({cell35 : {id : 35, buttons :[this.state.p41, this.state.p42, this.state.p43, this.state.p44]}})
         }
         if(!this.state.player_3.completedPlay) {
-            this.setState({cell53 : {id : 53, buttons :[this.state.b31, this.state.b32, this.state.b33, this.state.b34]}})
+            this.setState({cell53 : {id : 53, buttons :[this.state.p31, this.state.p32, this.state.p33, this.state.p34]}})
         }
         
     }
@@ -157,22 +157,22 @@ export default class ChowkabarComponent extends Component {
 
     checkCompletedPlay = (current_player_id) => {
         if (current_player_id === 1){
-            if(this.state.b11.inCell==='cell33' && this.state.b12.inCell==='cell33' && this.state.b13.inCell==='cell33' && this.state.b14.inCell==='cell33'){
+            if(this.state.p11.inCell==='cell33' && this.state.p12.inCell==='cell33' && this.state.p13.inCell==='cell33' && this.state.p14.inCell==='cell33'){
                 this.setState({ player_1 : {...this.state.player_1, completedPlay:true}})
             }
         }
         if (current_player_id === 2){
-            if(this.state.b21.inCell==='cell33' && this.state.b22.inCell==='cell33' && this.state.b23.inCell==='cell33' && this.state.b24.inCell==='cell33'){
+            if(this.state.p21.inCell==='cell33' && this.state.p22.inCell==='cell33' && this.state.p23.inCell==='cell33' && this.state.p24.inCell==='cell33'){
                 this.setState({ player_2 : {...this.state.player_2, completedPlay:true}})
             }
         }
         if (current_player_id === 3){
-            if(this.state.b31.inCell==='cell33' && this.state.b32.inCell==='cell33' && this.state.b33.inCell==='cell33' && this.state.b34.inCell==='cell33'){
+            if(this.state.p31.inCell==='cell33' && this.state.p32.inCell==='cell33' && this.state.p33.inCell==='cell33' && this.state.p34.inCell==='cell33'){
                 this.setState({ player_3 : {...this.state.player_3, completedPlay:true}})
             }
         }
         if (current_player_id === 4){
-            if(this.state.b41.inCell==='cell33' && this.state.b42.inCell==='cell33' && this.state.b43.inCell==='cell33' && this.state.b44.inCell==='cell33'){
+            if(this.state.p41.inCell==='cell33' && this.state.p42.inCell==='cell33' && this.state.p43.inCell==='cell33' && this.state.p44.inCell==='cell33'){
                 this.setState({ player_4 : {...this.state.player_4, completedPlay:true}})
             }
         }
@@ -316,10 +316,10 @@ export default class ChowkabarComponent extends Component {
                  player_2 : {...this.state.player_2, allow_to_Roll_Dice : false, dice: '', letTurnforNextPlayer : false},
                  player_3 : {...this.state.player_3, allow_to_Roll_Dice : false, dice: '', letTurnforNextPlayer : false},
                  player_4 : {...this.state.player_4, allow_to_Roll_Dice : false, dice: '', letTurnforNextPlayer : false},
-                 b11 : {...this.state.b11, disable : false},
-                 b12 : {...this.state.b12, disable : false},
-                 b13 : {...this.state.b13, disable : false},
-                 b14 : {...this.state.b14, disable : false},
+                 p11 : {...this.state.p11, disable : false},
+                 p12 : {...this.state.p12, disable : false},
+                 p13 : {...this.state.p13, disable : false},
+                 p14 : {...this.state.p14, disable : false},
                  currentPlayerID : 1
             })
         } else if(e.target.name === "player_2Dice"){
@@ -327,10 +327,10 @@ export default class ChowkabarComponent extends Component {
                  player_1 : {...this.state.player_1, allow_to_Roll_Dice : false, dice: '', letTurnforNextPlayer : false},
                  player_3 : {...this.state.player_3, allow_to_Roll_Dice : false, dice: '', letTurnforNextPlayer : false},
                  player_4 : {...this.state.player_4, allow_to_Roll_Dice : false, dice: '', letTurnforNextPlayer : false},
-                 b21 : {...this.state.b21, disable : true},
-                 b22 : {...this.state.b22, disable : true},
-                 b23 : {...this.state.b23, disable : true},
-                 b24 : {...this.state.b24, disable : true},
+                 p21 : {...this.state.p21, disable : true},
+                 p22 : {...this.state.p22, disable : true},
+                 p23 : {...this.state.p23, disable : true},
+                 p24 : {...this.state.p24, disable : true},
                  currentPlayerID : 2
             })
         } else if(e.target.name === "player_3Dice"){
@@ -338,10 +338,10 @@ export default class ChowkabarComponent extends Component {
                  player_1 : {...this.state.player_1, allow_to_Roll_Dice : false, dice: '', letTurnforNextPlayer : false},
                  player_2 : {...this.state.player_2, allow_to_Roll_Dice : false, dice: '', letTurnforNextPlayer : false},
                  player_4 : {...this.state.player_4, allow_to_Roll_Dice : false, dice: '', letTurnforNextPlayer : false},
-                 b31 : {...this.state.b31, disable : true},
-                 b32 : {...this.state.b32, disable : true},
-                 b33 : {...this.state.b33, disable : true},
-                 b34 : {...this.state.b34, disable : true},
+                 p31 : {...this.state.p31, disable : true},
+                 p32 : {...this.state.p32, disable : true},
+                 p33 : {...this.state.p33, disable : true},
+                 p34 : {...this.state.p34, disable : true},
                  currentPlayerID : 3
             })
         } else if(e.target.name === "player_4Dice"){
@@ -349,10 +349,10 @@ export default class ChowkabarComponent extends Component {
                  player_1 : {...this.state.player_1, allow_to_Roll_Dice : false, dice: '', letTurnforNextPlayer : false},
                  player_3 : {...this.state.player_3, allow_to_Roll_Dice : false, dice: '', letTurnforNextPlayer : false},
                  player_2 : {...this.state.player_2, allow_to_Roll_Dice : false, dice: '', letTurnforNextPlayer : false},
-                 b41 : {...this.state.b41, disable : true},
-                 b42 : {...this.state.b42, disable : true},
-                 b43 : {...this.state.b43, disable : true},
-                 b44 : {...this.state.b44, disable : true},
+                 p41 : {...this.state.p41, disable : true},
+                 p42 : {...this.state.p42, disable : true},
+                 p43 : {...this.state.p43, disable : true},
+                 p44 : {...this.state.p44, disable : true},
                  currentPlayerID : 4
             })
         }
@@ -377,28 +377,28 @@ export default class ChowkabarComponent extends Component {
         this.setState({alertMessage : ''})
         
         console.log("current Player: " + current_player_id)
-
-        if(this.state.player_1.dice && current_player_id === 1 && ['b11', 'b12', 'b13' , 'b14'].indexOf(btnToBeMoved.btnId) === -1){
+        this.setState({p11 : {...this.state.p11, btnClass : "playerBtn3"}})
+        if(this.state.player_1.dice && current_player_id === 1 && ['p11', 'p12', 'p13' , 'p14'].indexOf(btnToBeMoved.btnId) === -1){
             this.setState({
-                alertMessage : 'Only buttons allowed to clicks are b11, b12, b13,b14'
+                alertMessage : 'Only buttons allowed to clicks are p11, p12, p13,p14'
                 })
             return
         }
-        if(this.state.player_2.dice && current_player_id === 2 && ['b21', 'b22', 'b23' , 'b24'].indexOf(btnToBeMoved.btnId) === -1){
+        if(this.state.player_2.dice && current_player_id === 2 && ['p21', 'p22', 'p23' , 'p24'].indexOf(btnToBeMoved.btnId) === -1){
             this.setState({
-                alertMessage : 'Only buttons allowed to clicks are b21, b22, b23,b24'
+                alertMessage : 'Only buttons allowed to clicks are p21, p22, p23,p24'
                 })
             return
         }
-        if(this.state.player_3.dice && current_player_id === 3 && ['b31', 'b32', 'b33' , 'b34'].indexOf(btnToBeMoved.btnId) === -1){
+        if(this.state.player_3.dice && current_player_id === 3 && ['p31', 'p32', 'p33' , 'p34'].indexOf(btnToBeMoved.btnId) === -1){
             this.setState({
-                alertMessage : 'Only buttons allowed to clicks are b11, b12, b13,b14'
+                alertMessage : 'Only buttons allowed to clicks are p11, p12, p13,p14'
                 })
             return
         }
-        if(this.state.player_4.dice && current_player_id === 4 && ['b41', 'b42', 'b43' , 'b44'].indexOf(btnToBeMoved.btnId) === -1){
+        if(this.state.player_4.dice && current_player_id === 4 && ['p41', 'p42', 'p43' , 'p44'].indexOf(btnToBeMoved.btnId) === -1){
             this.setState({
-                alertMessage : 'Only buttons allowed to clicks are b41, b42, b43,b44'
+                alertMessage : 'Only buttons allowed to clicks are p41, p42, p43,p44'
                 })
             return
         }
@@ -558,28 +558,93 @@ export default class ChowkabarComponent extends Component {
     //     })
 
     // }
-   
+    stylePlayerIcons = (event) => {
+        let selected_btn = event.target.name
+        let btn_class = event.target.className
+        console.log("Selected Icone is : " + selected_btn)
+        console.log("Selected style is : " + btn_class)
+        if(['p11','p12','p13','p14'].indexOf(selected_btn)){
+            console.log("applied style to Player 1 btns")
+            this.setState({
+                p11 : {...this.state.p11, btnClass : btn_class},
+                p12 : {...this.state.p12, btnClass : btn_class},
+                p13 : {...this.state.p13, btnClass : btn_class},
+                p14 : {...this.state.p14, btnClass : btn_class}
+            })
+        }else if(['p21','p22','p23','p24'].indexOf(selected_btn)){
+            console.log("applied style to Player 2 btns")
+            this.setState({
+                p21 : {...this.state.p21, btnClass : btn_class},
+                p22 : {...this.state.p22, btnClass : btn_class},
+                p23 : {...this.state.p23, btnClass : btn_class},
+                p24 : {...this.state.p24, btnClass : btn_class}
+            })
+        } else if(['p31','p32','p33','p34'].indexOf(selected_btn)){
+            console.log("applied style to Player 3 btns")
+            this.setState({
+                p31 : {...this.state.p31, btnClass : btn_class},
+                p32 : {...this.state.p32, btnClass : btn_class},
+                p33 : {...this.state.p33, btnClass : btn_class},
+                p34 : {...this.state.p34, btnClass : btn_class}
+            })
+        }else if(['p41','p42','p43','p44'].indexOf(selected_btn)){
+            console.log("applied style to Player 4 btns")
+            this.setState({
+                p41 : {...this.state.p41, btnClass : btn_class},
+                p42 : {...this.state.p42, btnClass : btn_class},
+                p43 : {...this.state.p43, btnClass : btn_class},
+                p44 : {...this.state.p44, btnClass : btn_class}
+            })
+        }
+    }
+
     render() {
         return (
             <div>
                 <h1>ChowkaBara</h1>
+            
                 {!this.state.playersConfirmed && <div className="alert alert-warning">Confirm Players to start the game</div>}
                 <table className="table table-bordered table-md">
                             <tbody> 
                                 <tr>
-                                    <td>
+                                    <td className="palyerSide">
                                         Player 1 Name: <input type="text" disable={this.state.playersConfirmed} onChange={this.updatePlayer} name="player_1"/>
                                     </td>
-                                    <td>
+                                    <td>Choose Icon Style: 
+                                        <button className="btn btn-success playerBtn1" name="p11" onClick={this.stylePlayerIcons}>p11</button>
+                                        <button className="btn btn-success playerBtn2" name="p12" onClick={this.stylePlayerIcons}>p12</button>
+                                        <button className="btn btn-success playerBtn3" name="p13" onClick={this.stylePlayerIcons}>p13</button>
+                                        <button className="btn btn-success playerBtn4" name="p14" onClick={this.stylePlayerIcons}>p14</button>
+                                    </td>
+                                    
+                                    <td className="palyerSide">
                                         Player 2 Name: <input type="text" disable={this.state.playersConfirmed} onChange={this.updatePlayer} name="player_2"/>
+                                    </td>
+                                    <td>Choose Icon Style: 
+                                        <button className="btn btn-success playerBtn1" name="p21" onClick={this.stylePlayerIcons}>p21</button>
+                                        <button className="btn btn-success playerBtn2" name="p22" onClick={this.stylePlayerIcons}>p32</button>
+                                        <button className="btn btn-success playerBtn3" name="p23" onClick={this.stylePlayerIcons}>p23</button>
+                                        <button className="btn btn-success playerBtn4" name="p24" onClick={this.stylePlayerIcons}>p24</button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
+                                    <td className="palyerSide">
                                         Player 3 Name: <input type="text" disable={this.state.playersConfirmed} onChange={this.updatePlayer} name="player_3"/>  
                                     </td>
-                                    <td>
+                                    <td>Choose Icon Style: 
+                                        <button className="btn btn-success playerBtn1" name="p31" onClick={this.stylePlayerIcons}>p31</button>
+                                        <button className="btn btn-success playerBtn2" name="p32" onClick={this.stylePlayerIcons}>p32</button>
+                                        <button className="btn btn-success playerBtn3" name="p33" onClick={this.stylePlayerIcons}>p33</button>
+                                        <button className="btn btn-success playerBtn4" name="p34" onClick={this.stylePlayerIcons}>p34</button>
+                                    </td>
+                                    <td className="palyerSide">
                                         Player 4 Name: <input type="text" disable={this.state.playersConfirmed} onChange={this.updatePlayer} name="player_4"/>
+                                    </td>
+                                    <td>Choose Icon Style: 
+                                        <button className="btn btn-success playerBtn1" name="p41" onClick={this.stylePlayerIcons}>p41</button>
+                                        <button className="btn btn-success playerBtn2" name="p42" onClick={this.stylePlayerIcons}>p42</button>
+                                        <button className="btn btn-success playerBtn3" name="p43" onClick={this.stylePlayerIcons}>p43</button>
+                                        <button className="btn btn-success playerBtn4" name="p44" onClick={this.stylePlayerIcons}>p44</button>
                                     </td>
                                 </tr>
                             </tbody>
