@@ -6,6 +6,7 @@ export default class ChowkabarComponent extends Component {
     constructor(props){
         super(props)
         this.state = {
+            HowToPlay : true,
             playersConfirmed: false,
             gameOn : false,
             roundCnt : 0,
@@ -113,7 +114,7 @@ export default class ChowkabarComponent extends Component {
            
             cell11 : {id : 11, buttons : []},
             cell12 : {id : 12, buttons : []},
-            cell13 : {id : 13, buttons : [this.state.p11, this.state.p12, this.state.p13, this.state.p14]},
+            cell13 : {cellMeta : 'Player 1 Home', id : 13, buttons : [this.state.p11, this.state.p12, this.state.p13, this.state.p14]},
             cell14 : {id : 14, buttons : []},
             cell15 : {id : 15, buttons : []},
             cell21 : {id : 21, buttons : []},
@@ -160,18 +161,15 @@ export default class ChowkabarComponent extends Component {
             if(this.state.p11.inCell==='cell33' && this.state.p12.inCell==='cell33' && this.state.p13.inCell==='cell33' && this.state.p14.inCell==='cell33'){
                 this.setState({ player_1 : {...this.state.player_1, completedPlay:true}})
             }
-        }
-        if (current_player_id === 2){
+        } else if (current_player_id === 2){
             if(this.state.p21.inCell==='cell33' && this.state.p22.inCell==='cell33' && this.state.p23.inCell==='cell33' && this.state.p24.inCell==='cell33'){
                 this.setState({ player_2 : {...this.state.player_2, completedPlay:true}})
             }
-        }
-        if (current_player_id === 3){
+        } else if (current_player_id === 3){
             if(this.state.p31.inCell==='cell33' && this.state.p32.inCell==='cell33' && this.state.p33.inCell==='cell33' && this.state.p34.inCell==='cell33'){
                 this.setState({ player_3 : {...this.state.player_3, completedPlay:true}})
             }
-        }
-        if (current_player_id === 4){
+        } else if (current_player_id === 4){
             if(this.state.p41.inCell==='cell33' && this.state.p42.inCell==='cell33' && this.state.p43.inCell==='cell33' && this.state.p44.inCell==='cell33'){
                 this.setState({ player_4 : {...this.state.player_4, completedPlay:true}})
             }
@@ -197,7 +195,6 @@ export default class ChowkabarComponent extends Component {
         this.setState({player_1 : {...this.state.player_1, playing : true, completedPlay:false}})
 
         if(!this.state.player_2.name.length){
-            console.log("removing buttons for player 2")
             this.setState({player_2 : {...this.state.player_2, playing : false, completedPlay:true} ,
                 cell31 : {...this.state.cell31, buttons : ''}})
         } else {
@@ -217,7 +214,6 @@ export default class ChowkabarComponent extends Component {
         }
 
         this.setState({playersConfirmed : true})
-        console.log("Hello confirming the players : " + this.state.playersConfirmed)  
     }
 
     enableNextPlayer = (currentPlayerId) => {
@@ -235,6 +231,15 @@ export default class ChowkabarComponent extends Component {
 
     updatePlayers = (currentPlayerId) => {
         //set current and next player to enable buttons
+        this.checkCompletedPlay(1)
+        this.checkCompletedPlay(2)
+        this.checkCompletedPlay(3)
+        this.checkCompletedPlay(4)
+        console.log( " Player 1 Completion status: " + this.state.player_1.completedPlay)
+        console.log( " Player 2 Completion status: " + this.state.player_2.completedPlay)
+        console.log( " Player 3 Completion status: " + this.state.player_3.completedPlay)
+        console.log( " Player 4 Completion status: " + this.state.player_4.completedPlay)
+
         if(currentPlayerId === 1){
             this.setState({ player_1 : {...this.state.player_1, letTurnforNextPlayer : true}})
             if(!this.state.player_2.completedPlay){
@@ -405,8 +410,6 @@ export default class ChowkabarComponent extends Component {
 
         buttonPathtoTraverse.map((cell_id,index) => {
             if (current_cell.id === cell_id){
-                console.log("Match found: " + index + " : " + cell_id)
-
                 let can_enter_inner 
                 if(playerHome_of_btnToBeMoved === "cell13") {
                     can_enter_inner = this.state.player_1.hasPasstoEnterInner
@@ -423,12 +426,9 @@ export default class ChowkabarComponent extends Component {
                 } 
 
                 next_index_id = index + diceValue
-                console.log(btnToBeMoved.btnId + " : Button Clicked and it is in cell : " + btnToBeMoved.inCell + "Dice Value is : " + diceValue)
-
                 if(next_index_id <= 24 && diceValue){
                     next_cell_id = buttonPathtoTraverse[next_index_id]
                     next_cell = "cell" + next_cell_id
-                    console.log("next_cell: " + next_cell)
                     
                     if(this.isNextCellhasButtonofThisPlayer(playerHome_of_btnToBeMoved, next_cell)){
                         this.setState({
@@ -441,7 +441,6 @@ export default class ChowkabarComponent extends Component {
                             }) 
                     } else {
                         //ALL GOOD FOR THE MOVE!
-                        console.log("going to update next player now")
                         this.updatePlayers(current_player_id)
 
                         this.setState ({ roundCnt : this.state.roundCnt + 1})
@@ -515,7 +514,6 @@ export default class ChowkabarComponent extends Component {
                     this.setState({
                         alertMessage : 'Current button cannot be moved. try moving another button, if not let next player to take a turn'
                         }) 
-                        console.log("FROM ELSE BLOCK - BEFORE Let Next Player GO")
                         this.updatePlayers(current_player_id)
                 }
                 
@@ -561,34 +559,28 @@ export default class ChowkabarComponent extends Component {
     stylePlayerIcons = (event) => {
         let selected_btn = event.target.name
         let btn_class = event.target.className
-        console.log("Selected Icone is : " + selected_btn)
-        console.log("Selected style is : " + btn_class)
-        if(['p11','p12','p13','p14'].indexOf(selected_btn)){
-            console.log("applied style to Player 1 btns")
+        if('p1Btn' === selected_btn){
             this.setState({
                 p11 : {...this.state.p11, btnClass : btn_class},
                 p12 : {...this.state.p12, btnClass : btn_class},
                 p13 : {...this.state.p13, btnClass : btn_class},
                 p14 : {...this.state.p14, btnClass : btn_class}
             })
-        }else if(['p21','p22','p23','p24'].indexOf(selected_btn)){
-            console.log("applied style to Player 2 btns")
+        } else if('p2Btn' === selected_btn){
             this.setState({
                 p21 : {...this.state.p21, btnClass : btn_class},
                 p22 : {...this.state.p22, btnClass : btn_class},
                 p23 : {...this.state.p23, btnClass : btn_class},
                 p24 : {...this.state.p24, btnClass : btn_class}
             })
-        } else if(['p31','p32','p33','p34'].indexOf(selected_btn)){
-            console.log("applied style to Player 3 btns")
+        } else if('p3Btn' === selected_btn){
             this.setState({
                 p31 : {...this.state.p31, btnClass : btn_class},
                 p32 : {...this.state.p32, btnClass : btn_class},
                 p33 : {...this.state.p33, btnClass : btn_class},
                 p34 : {...this.state.p34, btnClass : btn_class}
             })
-        }else if(['p41','p42','p43','p44'].indexOf(selected_btn)){
-            console.log("applied style to Player 4 btns")
+        }else if('p4Btn' === selected_btn){
             this.setState({
                 p41 : {...this.state.p41, btnClass : btn_class},
                 p42 : {...this.state.p42, btnClass : btn_class},
@@ -602,29 +594,76 @@ export default class ChowkabarComponent extends Component {
         return (
             <div>
                 <h1>ChowkaBara</h1>
-            
+
                 {!this.state.playersConfirmed && <div className="alert alert-warning">Confirm Players to start the game</div>}
                 <table className="table table-bordered table-md">
                             <tbody> 
+                                <tr>
+                                    <td colSpan="4"> 
+                                        <div className="container">
+                                            <button className="btn btn-info primary" width="100px" name="howToPlay" onClick={() => {this.setState({HowToPlay : !this.state.HowToPlay})}}>How To Play</button>
+                                            {!this.state.HowToPlay && <div className="alert alert-info">
+                                                <span align="left">
+                                                    Welcome to ChowkaBar, Its a most fun and family friendly GAME!. And, it's an Educative too for youg ones with soem family fun!
+                                                    <p>This game can be enjoyed upto to 4 players, but, minimum of 2 players needed atleast.</p>
+                                                    <p><b><u>BOARD: Set Up</u></b></p>
+                                                    <ul>
+                                                        <li>Board has 5 rows and 5 columns, total of 25 cells</li>
+                                                        <li>All outer cells form a outer loop - Traversed in anti-clock wise passion</li>
+                                                        <li>Middle cells of first and last rows and columns of baord for Player's base (These cells are marked in <b color="brown">Brown</b>), these cells are safe place for all players to park their button(s)</li>
+                                                        <li>Cells bordering centermost cell (cell33) form a inner loop - Traversed in clock wise passion</li>
+                                                        <li>Center cell of board (i.e. cell 33) is a central place (Palace - marked in <b color="dark-green">DarkGreen</b>). And, Its final destination for each players' 4 buttons</li>
+                                                        <li>All outer cells except players' home cells (i.e cell13, cell31, cell35, cell53) are marked in <b color="lightgreen">LightGreen</b></li>
+                                                        <li>Cells bordering center cell (aka Palace) are marked in <b color="lightblue">LightBlue</b> </li>
+                                                    </ul>
+
+                                                    <p><b><u>Players: Minimum 2 player needed, Max of 4 players can enjoy this GAME!</u></b> </p>
+                                                    <ul>
+                                                        <li>Each player get 4 buttons, place all buttons in their home cells to begin the game</li>
+                                                        <li>Players take a turn and Roll a Dice and advance a button (of thier choice) to next cell to match Dice value</li>
+                                                        <li>Except players's home cells (cell13, cell31, cell35, cell53), if another player's button is in the destination cell, current player occupy that cell by sending another player's button to his/her home cell</li>  
+                                                    </ul>
+
+                                                    <p><b><u>RULES:</u></b> </p>
+                                                    <ul>
+                                                        <li>Each player gets 4 buttons, place them all in homebase cells</li>
+                                                        <li>Players take a turn roll a dice</li>
+                                                        <li>Each take a turn and roll a dice and move a button (of their choice)</li>
+                                                        <li>If there is a button of another player in destination cell, then another player's button will be sent home and current players button parked in that cell</li>
+                                                        <li>Next player take a turn, game continues </li>
+                                                        <li>Players' each button should complete (traverse) outer loop to enter into inner loop </li>
+                                                        <li>Player can enter into inner loop from previous cell of their home base</li>
+                                                        <li>To enter inner loop, player should have sent at least once another player's button while traversing outer loop</li>
+                                                        <li>Once player button completes inner loop (ending next cell to their homebase for e.g. player 1 - Homebase is 13, and inncer loop ends at cell23) then button can enter the Palace</li>
+                                                        <li>There will be situations (many times) during the game that player won't be able to move a button, player has to let their turn to next player (for this provided "Let Next Player GO" button provided) </li>
+                                                        <li>Each player has to move all 4 buttons to Palace to complete the game</li>
+                                                        <li>Last player who don't moves all his/her button to palace lose the GAME!</li>
+                                                    </ul>
+                                                </span>
+                                                </div>
+                                            }
+                                        </div>
+                                    </td>
+                                </tr>    
                                 <tr>
                                     <td className="palyerSide">
                                         Player 1 Name: <input type="text" disable={this.state.playersConfirmed} onChange={this.updatePlayer} name="player_1"/>
                                     </td>
                                     <td>Choose Icon Style: 
-                                        <button className="btn btn-success playerBtn1" name="p11" onClick={this.stylePlayerIcons}>p11</button>
-                                        <button className="btn btn-success playerBtn2" name="p12" onClick={this.stylePlayerIcons}>p12</button>
-                                        <button className="btn btn-success playerBtn3" name="p13" onClick={this.stylePlayerIcons}>p13</button>
-                                        <button className="btn btn-success playerBtn4" name="p14" onClick={this.stylePlayerIcons}>p14</button>
+                                        <button className="btn btn-success playerBtn1" name="p1Btn" onClick={this.stylePlayerIcons}>p11</button>
+                                        <button className="btn btn-success playerBtn2" name="p1Btn" onClick={this.stylePlayerIcons}>p12</button>
+                                        <button className="btn btn-success playerBtn3" name="p1Btn" onClick={this.stylePlayerIcons}>p13</button>
+                                        <button className="btn btn-success playerBtn4" name="p1Btn" onClick={this.stylePlayerIcons}>p14</button>
                                     </td>
                                     
                                     <td className="palyerSide">
                                         Player 2 Name: <input type="text" disable={this.state.playersConfirmed} onChange={this.updatePlayer} name="player_2"/>
                                     </td>
                                     <td>Choose Icon Style: 
-                                        <button className="btn btn-success playerBtn1" name="p21" onClick={this.stylePlayerIcons}>p21</button>
-                                        <button className="btn btn-success playerBtn2" name="p22" onClick={this.stylePlayerIcons}>p32</button>
-                                        <button className="btn btn-success playerBtn3" name="p23" onClick={this.stylePlayerIcons}>p23</button>
-                                        <button className="btn btn-success playerBtn4" name="p24" onClick={this.stylePlayerIcons}>p24</button>
+                                        <button className="btn btn-success playerBtn1" name="p2Btn" onClick={this.stylePlayerIcons}>p21</button>
+                                        <button className="btn btn-success playerBtn2" name="p2Btn" onClick={this.stylePlayerIcons}>p22</button>
+                                        <button className="btn btn-success playerBtn3" name="p2Btn" onClick={this.stylePlayerIcons}>p23</button>
+                                        <button className="btn btn-success playerBtn4" name="p2Btn" onClick={this.stylePlayerIcons}>p24</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -632,19 +671,19 @@ export default class ChowkabarComponent extends Component {
                                         Player 3 Name: <input type="text" disable={this.state.playersConfirmed} onChange={this.updatePlayer} name="player_3"/>  
                                     </td>
                                     <td>Choose Icon Style: 
-                                        <button className="btn btn-success playerBtn1" name="p31" onClick={this.stylePlayerIcons}>p31</button>
-                                        <button className="btn btn-success playerBtn2" name="p32" onClick={this.stylePlayerIcons}>p32</button>
-                                        <button className="btn btn-success playerBtn3" name="p33" onClick={this.stylePlayerIcons}>p33</button>
-                                        <button className="btn btn-success playerBtn4" name="p34" onClick={this.stylePlayerIcons}>p34</button>
+                                        <button className="btn btn-success playerBtn1" name="p3Btn" onClick={this.stylePlayerIcons}>p31</button>
+                                        <button className="btn btn-success playerBtn2" name="p3Btn" onClick={this.stylePlayerIcons}>p32</button>
+                                        <button className="btn btn-success playerBtn3" name="p3Btn" onClick={this.stylePlayerIcons}>p33</button>
+                                        <button className="btn btn-success playerBtn4" name="p3Btn" onClick={this.stylePlayerIcons}>p34</button>
                                     </td>
                                     <td className="palyerSide">
                                         Player 4 Name: <input type="text" disable={this.state.playersConfirmed} onChange={this.updatePlayer} name="player_4"/>
                                     </td>
                                     <td>Choose Icon Style: 
-                                        <button className="btn btn-success playerBtn1" name="p41" onClick={this.stylePlayerIcons}>p41</button>
-                                        <button className="btn btn-success playerBtn2" name="p42" onClick={this.stylePlayerIcons}>p42</button>
-                                        <button className="btn btn-success playerBtn3" name="p43" onClick={this.stylePlayerIcons}>p43</button>
-                                        <button className="btn btn-success playerBtn4" name="p44" onClick={this.stylePlayerIcons}>p44</button>
+                                        <button className="btn btn-success playerBtn1" name="p4Btn" onClick={this.stylePlayerIcons}>p41</button>
+                                        <button className="btn btn-success playerBtn2" name="p4Btn" onClick={this.stylePlayerIcons}>p42</button>
+                                        <button className="btn btn-success playerBtn3" name="p4Btn" onClick={this.stylePlayerIcons}>p43</button>
+                                        <button className="btn btn-success playerBtn4" name="p4Btn" onClick={this.stylePlayerIcons}>p44</button>
                                     </td>
                                 </tr>
                             </tbody>

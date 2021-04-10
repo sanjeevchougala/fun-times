@@ -1,26 +1,26 @@
 .player1Home{
-    background-color:lightgreen;
+    background-color:brown;
     opacity: 50%;
     min-width: 100px; 
     min-height : 100px;
 }
 
 .player2Home{
-    background-color:thistle;
+    background-color:brown;
     opacity: 50%;
     min-width: 100px; 
     min-height : 100px;
 }
 
 .player3Home{
-    background-color:wheat;
+    background-color:brown;
     opacity: 50%;
     min-width : 100px; 
     min-height : 100px;
 }
 
 .player4Home{
-    background-color:tomato;
+    background-color:brown;
     opacity: 50%;
     min-width: 100px; 
     min-height : 100px;
@@ -114,14 +114,14 @@
     border :  solid red;
 }
 .outerCell{
-    background-color:linen;
+    background-color:darkolivegreen;
     opacity: 50%;
     min-width: 60px; 
     min-height : 60px;
 }
 
 .innerCell{
-    background-color:brown;
+    background-color: cornflowerblue ;
     opacity: 70%;
     min-width: 60px; 
     min-height : 60px;
