@@ -601,7 +601,7 @@ export default class ChowkabarComponent extends Component {
                                 <tr>
                                     <td colSpan="4"> 
                                         <div className="container">
-                                            <button className="btn btn-info primary" width="100px" name="howToPlay" onClick={() => {this.setState({HowToPlay : !this.state.HowToPlay})}}>How To Play</button>
+                                            <button className="btn btn-info primary" width="100px" name="howToPlay" onClick={() => {this.setState({HowToPlay : !this.state.HowToPlay})}}>Click me  - How To Play</button>
                                             {!this.state.HowToPlay && <div className="alert alert-info">
                                                 <span align="left">
                                                     Welcome to ChowkaBar, Its a most fun and family friendly GAME!. And, it's an Educative too for youg ones with soem family fun!
