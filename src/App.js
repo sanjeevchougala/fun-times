@@ -6,8 +6,6 @@ import { HeaderComponent} from './components/common/HeaderComponent'
 import Welcome from  './components/common/Welcome'
 import TicTacToe from './components/tictactoe/TicTacToe'
 import Counter from './components/counter/Counter'
-import ScrabbleComponent from './components/scrabble/ScrabbleComponent'
-import DictionaryComponent from './components/scrabble/DictionaryComponent'
 import ChowkabarComponent from './components/chowkabara/ChowkabarComponent'
 
 class App extends Component {
@@ -19,9 +17,9 @@ class App extends Component {
                 <Route path="/" exact component={Welcome}></Route>
                 <Route path="/tictactoe" component={TicTacToe}></Route>
                 <Route path="/counter" component={Counter}/>
-                <Route path="/dictionary" component={DictionaryComponent}/>
-                <Route path="/scrabble" component={ScrabbleComponent}/>
                 <Route path="/chowkabara" component={ChowkabarComponent}/>
+                {/* <Route path="/dictionary" component={DictionaryComponent}/>
+                <Route path="/scrabble" component={ScrabbleComponent}/> */}
                 {/*<FooterComponent/>*/}
               </Router>  
           </div> 
