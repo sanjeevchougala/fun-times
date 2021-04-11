@@ -10,7 +10,7 @@ export default class ChowkabarComponent extends Component {
             playersConfirmed: false,
             gameOn : false,
             roundCnt : 0,
-            currentPlayersCnt : 1,
+            currentPlayersCnt : 2,
             currentPlayerID : 1,
             alertMessage: '',
             diceNum : '',
@@ -661,50 +661,66 @@ export default class ChowkabarComponent extends Component {
                                 </tr>    
                                 {!this.state.playersConfirmed && <div>
                                     <tr>
-                                        <td colSpan="4"><div className="alert alert-warning">Confirm Players to start the game</div></td>
+                                        <td colSpan="4"><div className="alert alert-warning">Confirm at least 2 players to start the game!</div></td>
                                     </tr>    
-                                <tr>
-                                    <td className="palyerSide">
-                                        Player 1 Name: <input type="text" disable={this.state.playersConfirmed} onChange={this.updatePlayer} name="player_1"/>
-                                    </td>
-                                    <td>Choose Icon Style: 
-                                        <button className="btn btn-success playerBtn1" name="p1Btn" onClick={this.stylePlayerIcons}>p11</button>
-                                        <button className="btn btn-success playerBtn2" name="p1Btn" onClick={this.stylePlayerIcons}>p12</button>
-                                        <button className="btn btn-success playerBtn3" name="p1Btn" onClick={this.stylePlayerIcons}>p13</button>
-                                        <button className="btn btn-success playerBtn4" name="p1Btn" onClick={this.stylePlayerIcons}>p14</button>
-                                    </td>
-                                    
-                                    <td className="palyerSide">
-                                        Player 2 Name: <input type="text" disable={this.state.playersConfirmed} onChange={this.updatePlayer} name="player_2"/>
-                                    </td>
-                                    <td>Choose Icon Style: 
-                                        <button className="btn btn-success playerBtn1" name="p2Btn" onClick={this.stylePlayerIcons}>p21</button>
-                                        <button className="btn btn-success playerBtn2" name="p2Btn" onClick={this.stylePlayerIcons}>p22</button>
-                                        <button className="btn btn-success playerBtn3" name="p2Btn" onClick={this.stylePlayerIcons}>p23</button>
-                                        <button className="btn btn-success playerBtn4" name="p2Btn" onClick={this.stylePlayerIcons}>p24</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td className="palyerSide">
-                                        Player 3 Name: <input type="text" disable={this.state.playersConfirmed} onChange={this.updatePlayer} name="player_3"/>  
-                                    </td>
-                                    <td>Choose Icon Style: 
-                                        <button className="btn btn-success playerBtn1" name="p3Btn" onClick={this.stylePlayerIcons}>p31</button>
-                                        <button className="btn btn-success playerBtn2" name="p3Btn" onClick={this.stylePlayerIcons}>p32</button>
-                                        <button className="btn btn-success playerBtn3" name="p3Btn" onClick={this.stylePlayerIcons}>p33</button>
-                                        <button className="btn btn-success playerBtn4" name="p3Btn" onClick={this.stylePlayerIcons}>p34</button>
-                                    </td>
-                                    <td className="palyerSide">
-                                        Player 4 Name: <input type="text" disable={this.state.playersConfirmed} onChange={this.updatePlayer} name="player_4"/>
-                                    </td>
-                                    <td>Choose Icon Style: 
-                                        <button className="btn btn-success playerBtn1" name="p4Btn" onClick={this.stylePlayerIcons}>p41</button>
-                                        <button className="btn btn-success playerBtn2" name="p4Btn" onClick={this.stylePlayerIcons}>p42</button>
-                                        <button className="btn btn-success playerBtn3" name="p4Btn" onClick={this.stylePlayerIcons}>p43</button>
-                                        <button className="btn btn-success playerBtn4" name="p4Btn" onClick={this.stylePlayerIcons}>p44</button>
-                                    </td>
-                                </tr>
-                                </div>}    
+                                    <tr>
+                                        <td className="palyerSide">
+                                            Player 1 Name: <input type="text" disable={this.state.playersConfirmed} onChange={this.updatePlayer} name="player_1"/>
+                                        </td>
+                                        <td>Choose Icon Style: 
+                                            <button className="btn btn-success playerBtn1" name="p1Btn" onClick={this.stylePlayerIcons}>p11</button>
+                                            <button className="btn btn-success playerBtn2" name="p1Btn" onClick={this.stylePlayerIcons}>p12</button>
+                                            <button className="btn btn-success playerBtn3" name="p1Btn" onClick={this.stylePlayerIcons}>p13</button>
+                                            <button className="btn btn-success playerBtn4" name="p1Btn" onClick={this.stylePlayerIcons}>p14</button>
+                                        </td>
+                                        
+                                        <td className="palyerSide">
+                                            Player 2 Name: <input type="text" disable={this.state.playersConfirmed} onChange={this.updatePlayer} name="player_2"/>
+                                        </td>
+                                        <td>Choose Icon Style: 
+                                            <button className="btn btn-success playerBtn1" name="p2Btn" onClick={this.stylePlayerIcons}>p21</button>
+                                            <button className="btn btn-success playerBtn2" name="p2Btn" onClick={this.stylePlayerIcons}>p22</button>
+                                            <button className="btn btn-success playerBtn3" name="p2Btn" onClick={this.stylePlayerIcons}>p23</button>
+                                            <button className="btn btn-success playerBtn4" name="p2Btn" onClick={this.stylePlayerIcons}>p24</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colSpan="4"> 
+                                            <div className="container">
+                                                <button className="btn btn-info primary" width="100px" name="have3Players" onClick={() => {this.setState({currentPlayersCnt : 3})}}>Click me if 3 players</button>    
+                                                <button className="btn btn-info primary" width="100px" name="have4Players" onClick={() => {this.setState({currentPlayersCnt : 4})}}>Click me if 4 players</button>  
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    {(this.state.currentPlayersCnt > 2) && <div>
+                                        <tr>
+                                            <td className="palyerSide">
+                                                Player 3 Name: <input type="text" disable={this.state.playersConfirmed} onChange={this.updatePlayer} name="player_3"/>  
+                                            </td>
+                                            <td>Choose Icon Style: 
+                                                <button className="btn btn-success playerBtn1" name="p3Btn" onClick={this.stylePlayerIcons}>p31</button>
+                                                <button className="btn btn-success playerBtn2" name="p3Btn" onClick={this.stylePlayerIcons}>p32</button>
+                                                <button className="btn btn-success playerBtn3" name="p3Btn" onClick={this.stylePlayerIcons}>p33</button>
+                                                <button className="btn btn-success playerBtn4" name="p3Btn" onClick={this.stylePlayerIcons}>p34</button>
+                                            </td>
+                                            {(this.state.currentPlayersCnt > 3) && <div>
+                                                <td className="palyerSide">
+                                                    Player 4 Name: <input type="text" disable={this.state.playersConfirmed} onChange={this.updatePlayer} name="player_4"/>
+                                                </td>
+                                                <td>Choose Icon Style: 
+                                                    <button className="btn btn-success playerBtn1" name="p4Btn" onClick={this.stylePlayerIcons}>p41</button>
+                                                    <button className="btn btn-success playerBtn2" name="p4Btn" onClick={this.stylePlayerIcons}>p42</button>
+                                                    <button className="btn btn-success playerBtn3" name="p4Btn" onClick={this.stylePlayerIcons}>p43</button>
+                                                    <button className="btn btn-success playerBtn4" name="p4Btn" onClick={this.stylePlayerIcons}>p44</button>
+                                                </td>
+                                            </div>
+                                            }
+                                            {(this.state.currentPlayersCnt === 3) &&  <td colSpan="2"></td>}
+                                        </tr>
+                                    </div>
+                                    }  
+                                </div>
+                                }        
                             </tbody>
                 </table>
 
