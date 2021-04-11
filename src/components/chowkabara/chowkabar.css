@@ -146,3 +146,16 @@
     background-color:lightgray;
     opacity: 90%;
 }
+.diceBtn{
+    border: 0px;
+    border-radius: 10px;
+    opacity:0.7;
+    min-height: 80px;
+    min-width: 80px;
+    max-height: 80px;
+    max-width: 80px;
+}
+.diceVal {
+    font-size: 20px;
+    color: green;
+}

@@ -23,7 +23,8 @@ export default class ChowkabarComponent extends Component {
                   completedPlay: false,
                   dice : '',
                   allow_to_Roll_Dice : true,
-                  letTurnforNextPlayer : false          
+                  letTurnforNextPlayer : false,
+                  btnsInPalace : 0          
                 },
             player_2 : { name:'', 
                   id : 2,
@@ -34,7 +35,8 @@ export default class ChowkabarComponent extends Component {
                   completedPlay: false,
                   dice : '',
                   allow_to_Roll_Dice : false,
-                  letTurnforNextPlayer : false   
+                  letTurnforNextPlayer : false,
+                  btnsInPalace : 0         
                 },
             player_3 : { name:'', 
                   id : 3,
@@ -45,7 +47,8 @@ export default class ChowkabarComponent extends Component {
                   completedPlay: false, 
                   dice : '',
                   allow_to_Roll_Dice : false ,
-                  letTurnforNextPlayer : false  
+                  letTurnforNextPlayer : false,
+                  btnsInPalace : 0        
                 },
             player_4 : { name:'', 
                   iconColor :'',
@@ -56,7 +59,8 @@ export default class ChowkabarComponent extends Component {
                   completedPlay: false, 
                   dice : '',
                   allow_to_Roll_Dice : false,
-                  letTurnforNextPlayer : false   
+                  letTurnforNextPlayer : false,
+                  btnsInPalace : 0         
                 },
 
             innerCells : [22,23,24,32,34,42,43,44],
@@ -91,10 +95,10 @@ export default class ChowkabarComponent extends Component {
         this.setState({
             roundCnt : 1,
             diceNum : '',
-            player_1 : { ...this.state.player_1, allow_to_Roll_Dice : true,  dice : '', hasPasstoEnterInner : false, letTurnforNextPlayer : false},
-            player_2 : { ...this.state.player_2, allow_to_Roll_Dice : false, dice : '', hasPasstoEnterInner : false, letTurnforNextPlayer : false},
-            player_3 : { ...this.state.player_3, allow_to_Roll_Dice : false, dice : '', hasPasstoEnterInner : false, letTurnforNextPlayer : false},
-            player_4 : { ...this.state.player_4, allow_to_Roll_Dice : false, dice : '', hasPasstoEnterInner : false, letTurnforNextPlayer : false},
+            player_1 : { ...this.state.player_1, allow_to_Roll_Dice : true,  dice : '', hasPasstoEnterInner : false, letTurnforNextPlayer : false, btnsInPalace : 0},
+            player_2 : { ...this.state.player_2, allow_to_Roll_Dice : false, dice : '', hasPasstoEnterInner : false, letTurnforNextPlayer : false, btnsInPalace : 0},
+            player_3 : { ...this.state.player_3, allow_to_Roll_Dice : false, dice : '', hasPasstoEnterInner : false, letTurnforNextPlayer : false, btnsInPalace : 0},
+            player_4 : { ...this.state.player_4, allow_to_Roll_Dice : false, dice : '', hasPasstoEnterInner : false, letTurnforNextPlayer : false, btnsInPalace : 0},
             p11 : {btnId : 'p11', btnClass: 'player1Btn', playerHome : 'cell13', disable : true, inCell : 'cell13', buttonPath : [13,12,11,21,31,41,51,52,53,54,55,45,35,25,15,14,24,34,44,43,42,32,22,23,33]},
             p12 : {btnId : 'p12', btnClass: 'player1Btn', playerHome : 'cell13', disable : true, inCell : 'cell13', buttonPath : [13,12,11,21,31,41,51,52,53,54,55,45,35,25,15,14,24,34,44,43,42,32,22,23,33]},
             p13 : {btnId : 'p13', btnClass: 'player1Btn', playerHome : 'cell13', disable : true, inCell : 'cell13', buttonPath : [13,12,11,21,31,41,51,52,53,54,55,45,35,25,15,14,24,34,44,43,42,32,22,23,33]},
@@ -158,20 +162,20 @@ export default class ChowkabarComponent extends Component {
 
     checkCompletedPlay = (current_player_id) => {
         if (current_player_id === 1){
-            if(this.state.p11.inCell==='cell33' && this.state.p12.inCell==='cell33' && this.state.p13.inCell==='cell33' && this.state.p14.inCell==='cell33'){
-                this.setState({ player_1 : {...this.state.player_1, completedPlay:true}})
+            if(this.state.player_1.btnsInPalace === 4){
+                this.setState({ player_1 : {...this.state.player_1, completedPlay:true}, alertMessage : "Player 1 finished all buttons"})
             }
         } else if (current_player_id === 2){
-            if(this.state.p21.inCell==='cell33' && this.state.p22.inCell==='cell33' && this.state.p23.inCell==='cell33' && this.state.p24.inCell==='cell33'){
-                this.setState({ player_2 : {...this.state.player_2, completedPlay:true}})
+            if(this.state.player_2.btnsInPalace === 4){
+                this.setState({ player_2 : {...this.state.player_2, completedPlay:true}, alertMessage : "Player 2 finished all buttons"})
             }
         } else if (current_player_id === 3){
-            if(this.state.p31.inCell==='cell33' && this.state.p32.inCell==='cell33' && this.state.p33.inCell==='cell33' && this.state.p34.inCell==='cell33'){
-                this.setState({ player_3 : {...this.state.player_3, completedPlay:true}})
+            if(this.state.player_3.btnsInPalace === 4){
+                this.setState({ player_3 : {...this.state.player_3, completedPlay:true}, alertMessage : "Player 3 finished all buttons"})
             }
         } else if (current_player_id === 4){
-            if(this.state.p41.inCell==='cell33' && this.state.p42.inCell==='cell33' && this.state.p43.inCell==='cell33' && this.state.p44.inCell==='cell33'){
-                this.setState({ player_4 : {...this.state.player_4, completedPlay:true}})
+            if(this.state.player_4.btnsInPalace === 4){
+                this.setState({ player_4 : {...this.state.player_4, completedPlay:true}, alertMessage : "Player 4 finished all buttons"})
             }
         }
         return
@@ -235,10 +239,6 @@ export default class ChowkabarComponent extends Component {
         this.checkCompletedPlay(2)
         this.checkCompletedPlay(3)
         this.checkCompletedPlay(4)
-        console.log( " Player 1 Completion status: " + this.state.player_1.completedPlay)
-        console.log( " Player 2 Completion status: " + this.state.player_2.completedPlay)
-        console.log( " Player 3 Completion status: " + this.state.player_3.completedPlay)
-        console.log( " Player 4 Completion status: " + this.state.player_4.completedPlay)
 
         if(currentPlayerId === 1){
             this.setState({ player_1 : {...this.state.player_1, letTurnforNextPlayer : true}})
@@ -385,25 +385,25 @@ export default class ChowkabarComponent extends Component {
         this.setState({p11 : {...this.state.p11, btnClass : "playerBtn3"}})
         if(this.state.player_1.dice && current_player_id === 1 && ['p11', 'p12', 'p13' , 'p14'].indexOf(btnToBeMoved.btnId) === -1){
             this.setState({
-                alertMessage : 'Only buttons allowed to clicks are p11, p12, p13,p14'
+                alertMessage : 'Only buttons allowed to move are p11, p12, p13,p14'
                 })
             return
         }
         if(this.state.player_2.dice && current_player_id === 2 && ['p21', 'p22', 'p23' , 'p24'].indexOf(btnToBeMoved.btnId) === -1){
             this.setState({
-                alertMessage : 'Only buttons allowed to clicks are p21, p22, p23,p24'
+                alertMessage : 'Only buttons allowed to move are p21, p22, p23,p24'
                 })
             return
         }
         if(this.state.player_3.dice && current_player_id === 3 && ['p31', 'p32', 'p33' , 'p34'].indexOf(btnToBeMoved.btnId) === -1){
             this.setState({
-                alertMessage : 'Only buttons allowed to clicks are p11, p12, p13,p14'
+                alertMessage : 'Only buttons allowed to move are p11, p12, p13,p14'
                 })
             return
         }
         if(this.state.player_4.dice && current_player_id === 4 && ['p41', 'p42', 'p43' , 'p44'].indexOf(btnToBeMoved.btnId) === -1){
             this.setState({
-                alertMessage : 'Only buttons allowed to clicks are p41, p42, p43,p44'
+                alertMessage : 'Only buttons allowed to move are p41, p42, p43,p44'
                 })
             return
         }
@@ -432,12 +432,12 @@ export default class ChowkabarComponent extends Component {
                     
                     if(this.isNextCellhasButtonofThisPlayer(playerHome_of_btnToBeMoved, next_cell)){
                         this.setState({
-                            alertMessage : 'You already have a button there, try moving any other button or existing button in next cell'
+                            alertMessage : 'You already have a button there, try moving any of your other button or existing button in next cell'
                             })    
                     }  else if(this.state.innerCells.indexOf(next_cell_id)!==-1 && can_enter_inner === false){
                         //check whther next cell is inner cells if so check whether player is allowed to enter inner cells
                         this.setState({
-                            alertMessage : 'Sorry, you do not have pass to enter inner cells yet, to enter inner cells you shoul have ate another player button atleast once. try moving another button. if not let next player to take a turn'
+                            alertMessage : 'Sorry, you do not have pass to enter inner loop yet, to enter inner cells you should have sent another player button to his/her homebase atleast once in outer loop. try moving another button. if not let next player to take a turn'
                             }) 
                     } else {
                         //ALL GOOD FOR THE MOVE!
@@ -445,13 +445,13 @@ export default class ChowkabarComponent extends Component {
 
                         this.setState ({ roundCnt : this.state.roundCnt + 1})
 
-                        btnToBeMoved.inCell = next_cell
+                        //btnToBeMoved.inCell = next_cell
                         this.setState({
-                            btnToBeMoved : {
-                            ...this.state.btnToBeMoved,
+                            [btnToBeMoved.btnId] : {
+                            ...this.state.[btnToBeMoved.btnId], inCell : next_cell
                             }
                         })
-
+                     
                         if(playerHome_of_btnToBeMoved === "cell13") {
                             this.setState({player_1 : {...this.state.player_1, dice: ''} })
                         } else if(playerHome_of_btnToBeMoved === "cell31") {
@@ -508,7 +508,23 @@ export default class ChowkabarComponent extends Component {
                     }  
 
                     //check whether all buttons of a player are in Palalce, if so, player completed play
-                    if(next_cell==="cell33"){this.checkCompletedPlay(current_player_id)}
+                    if(next_cell==="cell33"){
+                        let btnsInPalaceCnt = 0
+                        if(playerHome_of_btnToBeMoved === "cell13") {
+                            btnsInPalaceCnt = this.state.player_1.btnsInPalace + 1
+                            this.setState({player_1 : {...this.state.player_1, btnsInPalace: btnsInPalaceCnt} })
+                        } else if(playerHome_of_btnToBeMoved === "cell31") {
+                            btnsInPalaceCnt = this.state.player_2.btnsInPalace + 1
+                            this.setState({player_2 : {...this.state.player_2, btnsInPalace: btnsInPalaceCnt} })
+                        } else if(playerHome_of_btnToBeMoved === "cell35") {
+                            btnsInPalaceCnt = this.state.player_4.btnsInPalace + 1
+                            this.setState({player_4 : {...this.state.player_4, btnsInPalace: btnsInPalaceCnt} })
+                        } else if(playerHome_of_btnToBeMoved === "cell53") {
+                            btnsInPalaceCnt = this.state.player_3.btnsInPalace + 1
+                            this.setState({player_3 : {...this.state.player_3, btnsInPalace: btnsInPalaceCnt} })
+                        }    
+                        this.checkCompletedPlay(current_player_id)
+                    }
 
                 } else {
                     this.setState({
@@ -594,14 +610,12 @@ export default class ChowkabarComponent extends Component {
         return (
             <div>
                 <h1>ChowkaBara</h1>
-
-                {!this.state.playersConfirmed && <div className="alert alert-warning">Confirm Players to start the game</div>}
                 <table className="table table-bordered table-md">
                             <tbody> 
                                 <tr>
                                     <td colSpan="4"> 
                                         <div className="container">
-                                            <button className="btn btn-info primary" width="100px" name="howToPlay" onClick={() => {this.setState({HowToPlay : !this.state.HowToPlay})}}>How To Play</button>
+                                            <button className="btn btn-info primary" width="100px" name="howToPlay" onClick={() => {this.setState({HowToPlay : !this.state.HowToPlay})}}>Click me  for - How To Play??</button>
                                             {!this.state.HowToPlay && <div className="alert alert-info">
                                                 <span align="left">
                                                     Welcome to ChowkaBar, Its a most fun and family friendly GAME!. And, it's an Educative too for youg ones with soem family fun!
@@ -645,6 +659,10 @@ export default class ChowkabarComponent extends Component {
                                         </div>
                                     </td>
                                 </tr>    
+                                {!this.state.playersConfirmed && <div>
+                                    <tr>
+                                        <td colSpan="4"><div className="alert alert-warning">Confirm Players to start the game</div></td>
+                                    </tr>    
                                 <tr>
                                     <td className="palyerSide">
                                         Player 1 Name: <input type="text" disable={this.state.playersConfirmed} onChange={this.updatePlayer} name="player_1"/>
@@ -686,8 +704,10 @@ export default class ChowkabarComponent extends Component {
                                         <button className="btn btn-success playerBtn4" name="p4Btn" onClick={this.stylePlayerIcons}>p44</button>
                                     </td>
                                 </tr>
+                                </div>}    
                             </tbody>
                 </table>
+
                 {!this.state.gameOn && <div>
                     <button className="btn btn-success" name="confirmPlayers" onClick={this.confirmPlayers} disabled = {this.state.playersConfirmed}>Confirm Players</button>
                     {this.state.playersConfirmed && <button className="btn btn-success" name="startGame" onClick={this.startTheGame} disabled = {this.state.gameOn}>start the Game!</button>}
@@ -695,26 +715,32 @@ export default class ChowkabarComponent extends Component {
                 }
                 {this.state.alertMessage && <div className="alert alert-warning">{this.state.alertMessage}</div>}
                 {this.state.gameOn && <div responsive="true">
-                        <div> Current Player is: {this.state.currentPlayerID}</div>
-                        <div> Dice Value is: {this.state.diceNum}</div>
+
                         <table className="table table-bordered table-md">
                             <tbody>
                                 <tr name="outerRow1"> 
                                     <td className="cornerCell"></td>
                                     <td className="palyerSide" colSpan="5"> 
-                                        <td>PLAYER 1: {this.state.player_1.name}</td>
-                                        <td><button className="btn btn-success" name="player_1Dice" onClick={this.rollAdice} disabled = {!this.state.player_1.allow_to_Roll_Dice}>Roll A Dice : {this.state.player_1.dice}</button></td>
-                                        <td><button className="btn btn-primary" name="letTurnforNextPlayer1" onClick={() => {this.enableNextPlayer(1)}} disabled = {!this.state.player_1.letTurnforNextPlayer}> Let Next Player GO!</button></td>
+                                        PLAYER 1: {this.state.player_1.name} {this.state.player_1.dice && <div className="alert alert-info">Dice Rolled Value was {this.state.player_1.dice}</div>}
+                                        { this.state.player_1.allow_to_Roll_Dice && <div>
+                                                <button className="btn btn-success diceBtn fas fa-dice-3" name="player_1Dice" onClick={this.rollAdice} disabled = {!this.state.player_1.allow_to_Roll_Dice}>Roll A Dice : {this.state.player_1.dice}</button>
+                                            </div>
+                                        } 
+                                        <button className="btn btn-primary" name="letTurnforNextPlayer1" onClick={() => {this.enableNextPlayer(1)}} disabled = {!this.state.player_1.letTurnforNextPlayer}> Let Next Player GO!</button>  
                                     </td> 
+
                                     <td className="cornerCell"></td>
                                 </tr>
                                 <tr name="row1">
                                     <td rowSpan="5" className="player2Side" >
                                        {this.state.player_2.playing && <div>
-                                                PLAYER 2:  {this.state.player_2.name}<br></br>
-                                                <button className="btn btn-success" name="player_2Dice" onClick={this.rollAdice} disabled = {!this.state.player_2.allow_to_Roll_Dice}>Roll A Dice : {this.state.player_2.dice}</button><br></br>
+                                                PLAYER 2:  {this.state.player_2.name} {this.state.player_2.dice && <div className="alert alert-info">Dice Rolled Value was {this.state.player_2.dice}</div>}
+                                                { this.state.player_2.allow_to_Roll_Dice && <div >
+                                                    <button className="btn btn-success diceBtn" name="player_2Dice" onClick={this.rollAdice} disabled = {!this.state.player_2.allow_to_Roll_Dice}>Roll A Dice : {this.state.player_2.dice}</button>
+                                                    </div>
+                                                }
                                                 <button className="btn btn-primary" name="letTurnforNextPlayer2" onClick={() => {this.enableNextPlayer(2)}} disabled = {!this.state.player_2.letTurnforNextPlayer}> Let Next Player GO!</button>
-                                            </div>
+                                            </div> 
                                         }
                                         </td>
                                     <td className="outerCell" name="cell11"><ButtonsComponent currentCell={this.state.cell11} moveMe={this.moveMe}></ButtonsComponent></td>
@@ -724,9 +750,12 @@ export default class ChowkabarComponent extends Component {
                                     <td className="outerCell" name="cell15"><ButtonsComponent currentCell={this.state.cell15} moveMe={this.moveMe}></ButtonsComponent></td>
                                     <td className="player4Side" rowSpan="5">
                                     {this.state.player_4.playing && <div> 
-                                            PLAYER 4: {this.state.player_4.name}<br/>
-                                            <button className="btn btn-success" name="player_4Dice" onClick={this.rollAdice} disabled = {!this.state.player_4.allow_to_Roll_Dice}>Roll A Dice : {this.state.player_4.dice}</button><br/>
-                                            <button className="btn btn-primary" name="letTurnforNextPlayer4" onClick={() => {this.enableNextPlayer(4)}} disabled = {!this.state.player_4.letTurnforNextPlayer}> Let Next Player GO!</button>
+                                            PLAYER 4: {this.state.player_4.name} {this.state.player_4.dice && <div className="alert alert-info">Dice Rolled Value was {this.state.player_4.dice}</div>}
+                                            { this.state.player_4.allow_to_Roll_Dice && <div>
+                                                    <button className="btn btn-success diceBtn" name="player_4Dice" onClick={this.rollAdice} disabled = {!this.state.player_4.allow_to_Roll_Dice}>Roll A Dice : {this.state.player_4.dice}</button><br/>
+                                                </div>
+                                            }
+                                                <button className="btn btn-primary" name="letTurnforNextPlayer4" onClick={() => {this.enableNextPlayer(4)}} disabled = {!this.state.player_4.letTurnforNextPlayer}> Let Next Player GO!</button>
                                         </div>
                                     }
                                     </td>
@@ -763,9 +792,12 @@ export default class ChowkabarComponent extends Component {
                                     <td className="cornerCell"></td>
                                     <td className="palyerSide" colSpan="5"> 
                                         {this.state.player_3.playing && <div> 
-                                                <td>PLAYER 3: {this.state.player_3.name}</td>
-                                                <td><button className="btn btn-success" name="player_3Dice" onClick={this.rollAdice} disabled = {!this.state.player_3.allow_to_Roll_Dice}>Roll A Dice : {this.state.player_3.dice}</button></td>
-                                                <td><button className="btn btn-primary" name="letTurnforNextPlayer3" onClick={() => {this.enableNextPlayer(3)}} disabled = {!this.state.player_3.letTurnforNextPlayer}> Let Next Player GO!</button></td>
+                                                PLAYER 3: {this.state.player_3.name}{this.state.player_3.dice && <div className="alert alert-info">Dice Rolled Value was {this.state.player_3.dice}</div>}
+                                                { this.state.player_3.allow_to_Roll_Dice && <div>
+                                                        <button className="btn btn-success diceBtn" name="player_3Dice" onClick={this.rollAdice} disabled = {!this.state.player_3.allow_to_Roll_Dice}>Roll A Dice : {this.state.player_3.dice}</button>
+                                                    </div>
+                                                }
+                                                    <button className="btn btn-primary" name="letTurnforNextPlayer3" onClick={() => {this.enableNextPlayer(3)}} disabled = {!this.state.player_3.letTurnforNextPlayer}> Let Next Player GO!</button>
                                             </div>
                                         }
                                     </td>
