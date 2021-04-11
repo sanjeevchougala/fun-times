@@ -661,64 +661,60 @@ export default class ChowkabarComponent extends Component {
                                 </tr>    
                                 {!this.state.playersConfirmed && <div>
                                     <tr>
-                                        <td colSpan="4"><div className="alert alert-warning">Confirm at least 2 players to start the game!</div></td>
+                                        <td colSpan="4"><div className="alert alert-warning">Confirm at least 2 players to start the game</div></td>
                                     </tr>    
                                     <tr>
-                                        <td className="palyerSide">
-                                            Player 1 Name: <input type="text" disable={this.state.playersConfirmed} onChange={this.updatePlayer} name="player_1"/>
+                                        <td>
+                                            Player 1 Name: <input type="text" onChange={this.updatePlayer} name="player_1"/>
                                         </td>
-                                        <td>Choose Icon Style: 
+                                        <td>
+                                            Player 2 Name: <input type="text" onChange={this.updatePlayer} name="player_2"/>
+                                        </td>
+                                        {(this.state.currentPlayersCnt > 2) && <td>
+                                        Player 3 Name: <input type="text" onChange={this.updatePlayer} name="player_3"/>  
+                                        </td>}
+                                        {(this.state.currentPlayersCnt > 3) && <td>
+                                        Player 4 Name: <input type="text" onChange={this.updatePlayer} name="player_4"/>  
+                                        </td>}
+                                    </tr>
+                                    <tr>
+                                        <td className="playerSide"> Choose Icon Style: 
                                             <button className="btn btn-success playerBtn1" name="p1Btn" onClick={this.stylePlayerIcons}>p11</button>
                                             <button className="btn btn-success playerBtn2" name="p1Btn" onClick={this.stylePlayerIcons}>p12</button>
                                             <button className="btn btn-success playerBtn3" name="p1Btn" onClick={this.stylePlayerIcons}>p13</button>
                                             <button className="btn btn-success playerBtn4" name="p1Btn" onClick={this.stylePlayerIcons}>p14</button>
                                         </td>
-                                        
-                                        <td className="palyerSide">
-                                            Player 2 Name: <input type="text" disable={this.state.playersConfirmed} onChange={this.updatePlayer} name="player_2"/>
-                                        </td>
-                                        <td>Choose Icon Style: 
+                                        <td className="player2Side">Choose Icon Style: 
                                             <button className="btn btn-success playerBtn1" name="p2Btn" onClick={this.stylePlayerIcons}>p21</button>
                                             <button className="btn btn-success playerBtn2" name="p2Btn" onClick={this.stylePlayerIcons}>p22</button>
                                             <button className="btn btn-success playerBtn3" name="p2Btn" onClick={this.stylePlayerIcons}>p23</button>
                                             <button className="btn btn-success playerBtn4" name="p2Btn" onClick={this.stylePlayerIcons}>p24</button>
                                         </td>
-                                    </tr>
-                                    <tr>
-                                        <td colSpan="4"> 
-                                            <div className="container">
-                                                <button className="btn btn-info primary" width="100px" name="have3Players" onClick={() => {this.setState({currentPlayersCnt : 3})}}>Click me if 3 players</button>    
-                                                <button className="btn btn-info primary" width="100px" name="have4Players" onClick={() => {this.setState({currentPlayersCnt : 4})}}>Click me if 4 players</button>  
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    {(this.state.currentPlayersCnt > 2) && <div>
-                                        <tr>
-                                            <td className="palyerSide">
-                                                Player 3 Name: <input type="text" disable={this.state.playersConfirmed} onChange={this.updatePlayer} name="player_3"/>  
-                                            </td>
-                                            <td>Choose Icon Style: 
+                                        {(this.state.currentPlayersCnt > 2) && <td className="playerSide">
+                                        Choose Icon Style: 
                                                 <button className="btn btn-success playerBtn1" name="p3Btn" onClick={this.stylePlayerIcons}>p31</button>
                                                 <button className="btn btn-success playerBtn2" name="p3Btn" onClick={this.stylePlayerIcons}>p32</button>
                                                 <button className="btn btn-success playerBtn3" name="p3Btn" onClick={this.stylePlayerIcons}>p33</button>
                                                 <button className="btn btn-success playerBtn4" name="p3Btn" onClick={this.stylePlayerIcons}>p34</button>
-                                            </td>
-                                            {(this.state.currentPlayersCnt > 3) && <div>
-                                                <td className="palyerSide">
-                                                    Player 4 Name: <input type="text" disable={this.state.playersConfirmed} onChange={this.updatePlayer} name="player_4"/>
-                                                </td>
-                                                <td>Choose Icon Style: 
+                                        </td>}
+                                        {(this.state.currentPlayersCnt > 3) && <td className="player4Side">
+                                        Choose Icon Style: 
                                                     <button className="btn btn-success playerBtn1" name="p4Btn" onClick={this.stylePlayerIcons}>p41</button>
                                                     <button className="btn btn-success playerBtn2" name="p4Btn" onClick={this.stylePlayerIcons}>p42</button>
                                                     <button className="btn btn-success playerBtn3" name="p4Btn" onClick={this.stylePlayerIcons}>p43</button>
                                                     <button className="btn btn-success playerBtn4" name="p4Btn" onClick={this.stylePlayerIcons}>p44</button>
-                                                </td>
-                                            </div>
-                                            }
-                                            {(this.state.currentPlayersCnt === 3) &&  <td colSpan="2"></td>}
-                                        </tr>
-                                    </div>
-                                    }  
+                                        </td>}
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td > 
+                                            <button className="btn btn-info primary" width="100px" name="have3Players" onClick={() => {this.setState({currentPlayersCnt : 3})}}>Add 3rd players</button>    
+                                        </td>
+                                        {(this.state.currentPlayersCnt > 2) && <td > 
+                                            <button className="btn btn-info primary" width="100px" name="have4Players" onClick={() => {this.setState({currentPlayersCnt : 4})}}>Add 4th players</button>      
+                                        </td>}
+                                    </tr>
+                                    
                                 </div>
                                 }        
                             </tbody>
@@ -736,7 +732,7 @@ export default class ChowkabarComponent extends Component {
                             <tbody>
                                 <tr name="outerRow1"> 
                                     <td className="cornerCell"></td>
-                                    <td className="palyerSide" colSpan="5"> 
+                                    <td className="playerSide" colSpan="5"> 
                                         PLAYER 1: {this.state.player_1.name} {this.state.player_1.dice && <div className="alert alert-info">Dice Rolled Value was {this.state.player_1.dice}</div>}
                                         { this.state.player_1.allow_to_Roll_Dice && <div>
                                                 <button className="btn btn-success diceBtn fas fa-dice-3" name="player_1Dice" onClick={this.rollAdice} disabled = {!this.state.player_1.allow_to_Roll_Dice}>Roll A Dice : {this.state.player_1.dice}</button>
@@ -806,7 +802,7 @@ export default class ChowkabarComponent extends Component {
                                 </tr>
                                 <tr name="outerRow2"> 
                                     <td className="cornerCell"></td>
-                                    <td className="palyerSide" colSpan="5"> 
+                                    <td className="playerSide" colSpan="5"> 
                                         {this.state.player_3.playing && <div> 
                                                 PLAYER 3: {this.state.player_3.name}{this.state.player_3.dice && <div className="alert alert-info">Dice Rolled Value was {this.state.player_3.dice}</div>}
                                                 { this.state.player_3.allow_to_Roll_Dice && <div>

@@ -1,27 +1,27 @@
 .player1Home{
     background-color:brown;
-    opacity: 50%;
+    opacity: 0.5;
     min-width: 100px; 
     min-height : 100px;
 }
 
 .player2Home{
     background-color:brown;
-    opacity: 50%;
+    opacity: 0.5;
     min-width: 100px; 
     min-height : 100px;
 }
 
 .player3Home{
     background-color:brown;
-    opacity: 50%;
+    opacity: 0.5;
     min-width : 100px; 
     min-height : 100px;
 }
 
 .player4Home{
     background-color:brown;
-    opacity: 50%;
+    opacity: 0.5;
     min-width: 100px; 
     min-height : 100px;
 }
@@ -115,14 +115,14 @@
 }
 .outerCell{
     background-color:darkolivegreen;
-    opacity: 50%;
+    opacity: 0.5;
     min-width: 60px; 
     min-height : 60px;
 }
 
 .innerCell{
     background-color: cornflowerblue ;
-    opacity: 70%;
+    opacity: 0.7;
     min-width: 60px; 
     min-height : 60px;
 }
@@ -134,17 +134,19 @@
 
 }
 .player2Side, .player4Side{
-    background-color:;
+    background-color:steelblue;
+    opacity: 0.8;
     transition: rotate 1s;
     rotate: 1 -0.5 1 180deg;
+    /*transform : rotate3d(0, 0, 1, -90deg)*/
 }
 .cornerCell{
     background-color:peru;
 
 }
-.palyerSide{
+.playerSide{
     background-color:slateblue;
-    opacity: 90%;
+    opacity: 0.6;
 }
 .diceBtn{
     border: 0px;
