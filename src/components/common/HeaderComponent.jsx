@@ -14,10 +14,10 @@ export class HeaderComponent extends Component {
                         <li><Link className="nav-link" to="/tictactoe">Tic-Tac-Toe</Link></li>
                         <li><Link className="nav-link" to="/chowkabara">Chowkabar</Link></li>
                     </ul>
-                    {/* <ul className="navbar-nav navbar-collapse justify-content-end">
+                    <ul className="navbar-nav navbar-collapse justify-content-end">
                         <li><Link className="nav-link" to="/dictionary">Dictionary</Link></li>
                         <li><Link className="nav-link" to="/scrabble">Scrabble</Link></li>
-                    </ul>  */}
+                    </ul> 
                 </nav>
             </header>
         );
